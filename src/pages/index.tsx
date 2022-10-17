@@ -36,12 +36,10 @@ const PlaceholderProject = () => {
 
 const Home: NextPage = () => {
   return (
-    <Page title="Página inicial" containerProps={{ fontSize: "1.25rem" }}>
-      <Heading as="h1" size="2xl" fontFamily="Arvo">
-        Portfolio
-      </Heading>
+    <Page title="Home" containerProps={{ fontSize: "1.25rem" }}>
       <Flex
         flexDir={{ base: "column", lg: "row" }}
+        justifyContent="center"
         alignItems="center"
         textAlign={{ base: "center", lg: "initial" }}
         py={4}
@@ -77,7 +75,10 @@ const Home: NextPage = () => {
           </Box>
         </Box>
       </Flex>
-      <Box style={{ textIndent: "1rem" }}>
+      <Box
+        textAlign={{ base: "initial", md: "center" }}
+        style={{ textIndent: "1rem" }}
+      >
         <Text>
           Besides those technologies, I have also worked with{" "}
           <strong>Vue</strong> and <strong>Express</strong> in the past.
