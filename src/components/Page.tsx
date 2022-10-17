@@ -31,7 +31,7 @@ function Page({ title, children, containerProps = {} }: PageProps) {
           crossOrigin="true"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Roboto+Slab&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap"
           rel="stylesheet"
         />
       </Head>
