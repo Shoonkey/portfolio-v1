@@ -2,6 +2,7 @@ import { Box, Flex, Grid, Heading, HStack, Image, Text } from "@chakra-ui/react"
 import type { NextPage } from "next"
 
 import Page from "../components/Page"
+import Project from "../components/Project"
 
 interface TechProps {
   logoSrc: string
@@ -95,10 +96,11 @@ const Home: NextPage = () => {
           gap={4}
           mt={4}
         >
-          <PlaceholderProject />
-          <PlaceholderProject />
-          <PlaceholderProject />
-          <PlaceholderProject />
+          <Project
+            name="Pomodoro timer"
+            githubLink="https://github.com/Shoonkey/pomodoro-timer"
+            imageSource="/pomodoro-timer.png"
+          />
         </Grid>
       </Box>
     </Page>
