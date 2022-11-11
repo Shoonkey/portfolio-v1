@@ -60,7 +60,7 @@ const Home: NextPage = () => {
             <Text>
               My name is <strong>Richard</strong>.
             </Text>
-            <Text>I'm a full stack engineer that works mainly with:</Text>
+            <Text>I&apos;m a full stack engineer that works mainly with:</Text>
             <Flex
               gap={6}
               mt={3}
