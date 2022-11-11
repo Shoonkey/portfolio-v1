@@ -101,6 +101,12 @@ const Home: NextPage = () => {
             githubLink="https://github.com/Shoonkey/pomodoro-timer"
             imageSource="/pomodoro-timer.png"
           />
+          <Project
+            name="Website redesign (Beecrowd, unofficial)"
+            githubLink="https://github.com/Shoonkey/beecrowd-redesign"
+            imageSource="/beecrowd-redesign.png"
+            inProgress
+          />
         </Grid>
       </Box>
     </Page>
