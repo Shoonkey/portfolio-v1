@@ -98,11 +98,13 @@ const Home: NextPage = () => {
         >
           <Project
             name="Pomodoro timer"
+            link="https://timer.shoonkey.com"
             githubLink="https://github.com/Shoonkey/pomodoro-timer"
             imageSource="/pomodoro-timer.png"
           />
           <Project
-            name="Website redesign (Beecrowd, unofficial)"
+            name="Ceebrowd (Beecrowd unofficial redesign)"
+            link="https://ceebrowd.shoonkey.com"
             githubLink="https://github.com/Shoonkey/beecrowd-redesign"
             imageSource="/beecrowd-redesign.png"
             inProgress

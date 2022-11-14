@@ -1,9 +1,10 @@
 import { Heading, Image, Flex, Text, Tooltip } from "@chakra-ui/react"
 import Link from "next/link"
-import { Code } from "phosphor-react"
+import { Code, ArrowSquareOut } from "phosphor-react"
 
 interface ProjectProps {
   name: string
+  link: string
   githubLink: string
   imageSource: string
   inProgress?: boolean
@@ -11,6 +12,7 @@ interface ProjectProps {
 
 function Project({
   name,
+  link,
   githubLink,
   imageSource,
   inProgress = false,
@@ -30,6 +32,13 @@ function Project({
               In progress
             </Text>
           )}
+          <Link href={link}>
+            <a target="_blank">
+              <Tooltip placement="top" label="Open website">
+              <ArrowSquareOut size={32} color="cyan" />
+              </Tooltip>
+            </a>
+          </Link>
           <Link href={githubLink}>
             <a target="_blank">
               <Tooltip placement="top" label="View code">
