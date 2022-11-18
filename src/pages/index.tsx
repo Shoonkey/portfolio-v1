@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, Heading, HStack, Image, Text } from "@chakra-ui/react"
+import { chakra, Box, Flex, Grid, Heading, Image, Text } from "@chakra-ui/react"
 import type { NextPage } from "next"
 
 import Page from "../components/Page"
@@ -104,10 +104,36 @@ const Home: NextPage = () => {
           />
           <Project
             name="Ceebrowd (Beecrowd unofficial redesign)"
-            link="https://ceebrowd.shoonkey.com"
             githubLink="https://github.com/Shoonkey/beecrowd-redesign"
-            imageSource="/beecrowd-redesign.png"
             inProgress
+            imageSource="/beecrowd-redesign.png"
+          />
+          <Project
+            name="Ordis (Discord bot for Warframe)"
+            githubLink="https://github.com/Shoonkey/ordis"
+            inProgress
+            imageSource="/robot.jpg"
+            imageAlt="Robot in a bright yellow background"
+            imageCredit={
+              <Text>
+                Photo by{" "}
+                <chakra.a
+                  color="pink"
+                  textDecoration="underline"
+                  href="https://unsplash.com/@hobijist3d?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                >
+                  hobijist3d
+                </chakra.a>{" "}
+                on{" "}
+                <chakra.a
+                  color="pink"
+                  textDecoration="underline"
+                  href="https://unsplash.com/s/photos/robot?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                >
+                  Unsplash
+                </chakra.a>
+              </Text>
+            }
           />
         </Grid>
       </Box>
