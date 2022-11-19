@@ -108,7 +108,7 @@ const Home: NextPage = () => {
             inProgress
             imageSource="/beecrowd-redesign.png"
           />
-          {/* <Project
+          <Project
             name="Ordis (Discord bot for Warframe)"
             githubLink="https://github.com/Shoonkey/ordis"
             inProgress
@@ -134,7 +134,7 @@ const Home: NextPage = () => {
                 </chakra.a>
               </Text>
             }
-          /> */}
+          />
         </Grid>
       </Box>
     </Page>
