@@ -104,6 +104,7 @@ const Home: NextPage = () => {
           />
           <Project
             name="Ceebrowd (Beecrowd unofficial redesign)"
+            link="https://ceebrowd.shoonkey.com"
             githubLink="https://github.com/Shoonkey/beecrowd-redesign"
             inProgress
             imageSource="/beecrowd-redesign.png"
