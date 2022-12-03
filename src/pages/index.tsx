@@ -103,11 +103,11 @@ const Home: NextPage = () => {
             imageSource="/pomodoro-timer.png"
           />
           <Project
-            name="Ceebrowd (Beecrowd unofficial redesign)"
+            name="Ceebrowd (unofficial code online judge redesign)"
             link="https://ceebrowd.shoonkey.com"
-            githubLink="https://github.com/Shoonkey/beecrowd-redesign"
+            githubLink="https://github.com/Shoonkey/ceebrowd"
             inProgress
-            imageSource="/beecrowd-redesign.png"
+            imageSource="/ceebrowd.png"
           />
           <Project
             name="Ordis (Discord bot for Warframe)"
