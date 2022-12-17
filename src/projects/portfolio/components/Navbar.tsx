@@ -1,12 +1,34 @@
-import { Box, Heading } from "@chakra-ui/react"
+import { Flex, Heading, Select } from "@chakra-ui/react"
+import { useContext } from "react"
+import BackToPortfolioButton from "./BackToPortfolioButton"
 
-function Navbar() {
+import { I18NContext, SupportedLanguage } from "./I18NProvider"
+
+interface NavbarProps {
+  title: string
+  showBackButton?: boolean
+}
+
+function Navbar({ title, showBackButton = true }: NavbarProps) {
+  const { currentLanguage, changeLanguage } = useContext(I18NContext)
+
   return (
-    <Box as="header" mb={4}>
-      <Heading as="h1" size="2xl" fontFamily="Arvo">
-        Portfolio
-      </Heading>
-    </Box>
+    <Flex as="header" mb={4} justifyContent="space-between" alignItems="center" gap={4}>
+      {showBackButton && <BackToPortfolioButton />}
+      <Flex flexGrow={1} justifyContent="space-between" alignItems="center">
+        <Heading as="h1" size="2xl" fontFamily="Arvo">
+          {title}
+        </Heading>
+        <Select
+          value={currentLanguage}
+          onChange={(e) => changeLanguage(e.target.value as SupportedLanguage)}
+          w="auto"
+        >
+          <option value="en-US">en-US</option>
+          <option value="pt-BR">pt-BR</option>
+        </Select>
+      </Flex>
+    </Flex>
   )
 }
 

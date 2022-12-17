@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "pageTitles": {
+      "home": "Home | Pomodoro timer"
+    }
+  },
+  "content": {
+    "title": "Pomodoro timer",
+    "home": {
+      "timer": {
+        "chillTime": "Chill time",
+        "workTime": "Work time",
+        "start": "Start",
+        "pause": "Pause"
+      },
+      "taskList": {
+        "title": "Tasks",
+        "task": {
+          "add": "Add task",
+          "complete": "Complete",
+          "reset": "Reset",
+          "delete": "Delete"
+        }
+      },
+      "taskModal": {
+        "newTask": "New task",
+        "add": "Add",
+        "cancel": "Cancel1"
+      }
+    }
+  }
+}

@@ -1,19 +1,13 @@
-import { Flex, Heading } from "@chakra-ui/react"
+import { Flex } from "@chakra-ui/react"
 
-import BackToPortfolioButton from "../../projects/portfolio/components/BackToPortfolioButton"
-import Page from "./components/Page"
+import Page from "../portfolio/components/Page"
+
 import Clock from "./components/Clock"
 import TodoList from "./components/TodoList"
 
 function PomodoroTimer() {
   return (
-    <Page title="Home | Pomodoro timer">
-      <Flex alignItems="center" p={7}>
-        <BackToPortfolioButton />
-        <Heading ml={4} size={{ base: "2xl", lg: "3xl" }} fontFamily="inherit" display="flex" alignItems="center">
-          Pomodoro timer
-        </Heading>
-      </Flex>
+    <Page projectName="pomodoro-timer" title="home">
       <Flex
         flexGrow={1}
         alignItems="stretch"

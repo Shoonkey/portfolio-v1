@@ -1,13 +1,23 @@
 import { chakra, Box, Flex, Heading, Image, Text } from "@chakra-ui/react"
 import type { NextPage } from "next"
+import { useContext } from "react"
+import { I18NContext } from "../projects/portfolio/components/I18NProvider"
 
 import Page from "../projects/portfolio/components/Page"
 import Project from "../projects/portfolio/components/Project"
 import Tech from "../projects/portfolio/components/Tech"
 
 const Home: NextPage = () => {
+  const { getI18N } = useContext(I18NContext)
+  const i18n = getI18N("portfolio")
+
   return (
-    <Page title="Home | Portfolio" containerProps={{ fontSize: "1.25rem" }}>
+    <Page
+      projectName="portfolio"
+      title="home"
+      showBackToPortfolioButton={false}
+      containerProps={{ fontSize: "1.25rem" }}
+    >
       <Flex
         flexDir={{ base: "column", lg: "row" }}
         justifyContent="center"
@@ -18,21 +28,19 @@ const Home: NextPage = () => {
       >
         <Image
           src="/pfp.jpg"
-          alt="Me looking to the right smiling with messy hair"
+          alt={i18n.content.home.profilePictureAlt}
           w={{ base: "80%", md: "400px" }}
           borderRadius="40%"
         />
         <Box>
           <Heading as="h2" size="2xl">
-            Hello there!
+            {i18n.content.home.hello}
           </Heading>
           <Box>
-            <Text>
-              My name is <strong>Richard</strong>.
-            </Text>
-            <Text>
-              I&apos;m a full stack engineer that works mainly in frontend with:
-            </Text>
+            <Text
+              dangerouslySetInnerHTML={{ __html: i18n.content.home.greeting }}
+            />
+            <Text>{i18n.content.home.workDescription}</Text>
             <Flex
               gap={6}
               mt={3}
@@ -47,7 +55,7 @@ const Home: NextPage = () => {
             </Flex>
             <Text textAlign="center" fontSize="1rem" mt={1}>
               <Text as="span" color="gray.500" mr={2} display="inline-block">
-                E-mail for contact:
+                {i18n.content.home.contactEmailDescription}
               </Text>
               <Text as="strong" letterSpacing=".8px">
                 shoonkey.dev@gmail.com
@@ -60,33 +68,34 @@ const Home: NextPage = () => {
         textAlign={{ base: "initial", md: "center" }}
         style={{ textIndent: "1rem" }}
       >
-        <Text>
-          Besides those technologies, I have also worked with{" "}
-          <strong>Vue</strong> and <strong>Express</strong> in the past.
-        </Text>
-        <Text>Here are some of my projects:</Text>
+        <Text
+          dangerouslySetInnerHTML={{
+            __html: i18n.content.home.portfolioDescription,
+          }}
+        />
+        <Text>{i18n.content.home.projectHeader}</Text>
         <Flex gap={4} mt={4} flexWrap="wrap" justifyContent="center">
           <Project
-            name="Pomodoro timer"
+            name={i18n.content.home.projects.pomodoroTimer.title}
             link="/pomodoro-timer"
             githubLink="https://github.com/Shoonkey/portfolio/tree/main/src/projects/pomodoro-timer"
             imageSource="/pomodoro-timer.png"
           />
           <Project
-            name="Music theory quiz"
+            name={i18n.content.home.projects.musicTheoryQuiz.title}
             link="/music-theory"
             githubLink="https://github.com/Shoonkey/portfolio/tree/main/src/projects/music-theory"
             imageSource="/music-theory-quiz.png"
           />
           <Project
-            name="Ordis (Discord bot for Warframe)"
+            name={i18n.content.home.projects.ordis.title}
             githubLink="https://github.com/Shoonkey/ordis"
             inProgress
             imageSource="/robot.jpg"
-            imageAlt="Robot in a bright yellow background"
+            imageAlt={i18n.content.home.projects.ordis.imageAlt}
             imageCredit={
               <Text>
-                Photo by{" "}
+                {i18n.content.home.projects.ordis.imageCredit.photoBy}{" "}
                 <chakra.a
                   color="pink"
                   textDecoration="underline"
@@ -94,7 +103,7 @@ const Home: NextPage = () => {
                 >
                   hobijist3d
                 </chakra.a>{" "}
-                on{" "}
+                {i18n.content.home.projects.ordis.imageCredit.on}
                 <chakra.a
                   color="pink"
                   textDecoration="underline"

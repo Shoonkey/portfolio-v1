@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "pageTitles": {
+      "home": "Home | Music theory quiz",
+      "loading": "Loading... | Music theory quiz"
+    }
+  },
+  "content": {
+    "title": "Music theory quiz",
+    "home": {
+      "confirm": "Confirm",
+      "next": "Next",
+      "exercise": {
+        "description": "Click / Tap a line or space to place a note.",
+        "goal": "Place a note in",
+        "result": {
+          "correct": "You got it!",
+          "incorrect": "Oh no, you missed! You chose"
+        }
+      }
+    }
+  }
+}

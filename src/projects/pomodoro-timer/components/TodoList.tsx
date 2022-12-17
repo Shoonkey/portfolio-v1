@@ -10,11 +10,15 @@ import { useEffect, useState } from "react"
 import { Plus } from "phosphor-react"
 import { v4 as uuidv4 } from "uuid"
 
+import useI18N from "../../portfolio/hooks/useI18N"
+
 import Task from "../interfaces/Task"
 import AddTaskDialog from "./AddTaskModal"
 import TaskItem from "./TaskItem"
 
 function TodoList() {
+  const i18n = useI18N("pomodoro-timer")
+
   const [tasks, setTasks] = useState<Task[]>([])
   const [loadingTasks, setLoadingTasks] = useState(true)
   const [taskModalOpen, setTaskModalOpen] = useState(false)
@@ -64,11 +68,11 @@ function TodoList() {
       />
       <Flex flexGrow={1} flexDir="column" maxW={{ base: "auto", lg: "600px" }}>
         <Flex gap={3}>
-          <Heading as="h3">Tasks</Heading>
-          <Tooltip placement="top" label="Add task">
+          <Heading as="h3">{i18n.content.home.taskList.title}</Heading>
+          <Tooltip placement="top" label={i18n.content.home.taskList.task.add}>
             <IconButton
               icon={<Plus size={32} />}
-              aria-label="Add task"
+              aria-label={i18n.content.home.taskList.task.add}
               variant="transparent"
               color="orange.400"
               onClick={() => setTaskModalOpen(true)}

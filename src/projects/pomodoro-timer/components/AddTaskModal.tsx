@@ -12,6 +12,8 @@ import {
 } from "@chakra-ui/react"
 import { useState } from "react"
 
+import useI18N from "../../portfolio/hooks/useI18N"
+
 interface AddTaskDialogProps {
   isOpen: boolean
   onAddTask: (description: string) => void
@@ -19,13 +21,15 @@ interface AddTaskDialogProps {
 }
 
 function AddTaskDialog({ isOpen, onAddTask, onClose }: AddTaskDialogProps) {
+  const i18n = useI18N("pomodoro-timer")
+
   const [description, setDescription] = useState("")
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} isCentered size="xl">
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>New task</ModalHeader>
+        <ModalHeader>{i18n.content.home.taskModal.newTask}</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           <Flex as="form">
@@ -36,19 +40,17 @@ function AddTaskDialog({ isOpen, onAddTask, onClose }: AddTaskDialogProps) {
           </Flex>
         </ModalBody>
         <ModalFooter gap={3}>
-          <Button 
-            colorScheme="orange" 
+          <Button
+            colorScheme="orange"
             onClick={() => {
               onAddTask(description)
               setDescription("")
               onClose()
             }}
           >
-            Add
+            {i18n.content.home.taskModal.add}
           </Button>
-          <Button onClick={onClose}>
-            Cancel
-          </Button>
+          <Button onClick={onClose}>{i18n.content.home.taskModal.cancel}</Button>
         </ModalFooter>
       </ModalContent>
     </Modal>

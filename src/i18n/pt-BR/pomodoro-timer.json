@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "pageTitles": {
+      "home": "Página inicial | Timer Pomodoro"
+    }
+  },
+  "content": {
+    "title": "Timer Pomodoro",
+    "home": {
+      "timer": {
+        "chillTime": "Hora de relaxar",
+        "workTime": "Hora de trabalhar",
+        "start": "Começar",
+        "pause": "Pausar"
+      },
+      "taskList": {
+        "title": "Tarefas",
+        "task": {
+          "add": "Adicionar tarefa",
+          "complete": "Completar",
+          "reset": "Reiniciar",
+          "delete": "Deletar"
+        }
+      },
+      "taskModal": {
+        "newTask": "Nova tarefa",
+        "add": "Adicionar",
+        "cancel": "Cancelar"
+      }
+    }
+  }
+}

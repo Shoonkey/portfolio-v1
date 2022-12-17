@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "pageTitles": {
+      "home": "Página inicial | Portfólio"
+    },
+    "backToPortfolio": "Voltar pro portfólio"
+  },
+  "content": {
+    "title": "Portfólio",
+    "home": {
+      "profilePictureAlt": "Eu olhando para a direita sorrindo com o cabelo bagunçado",
+      "hello": "Oi!",
+      "greeting": "Meu nome é <strong>Richard</strong>.",
+      "workDescription": "Eu sou um desenvolvedor full-stack que trabalha principalmente com front-end usando:",
+      "contactEmailDescription": "E-mail para contato:",
+      "portfolioDescription": "Além dessas tecnologias, eu também já trabalhei com <strong>Vue</strong> e <strong>Express</strong>.",
+      "projectHeader": "Aqui estão alguns dos meus projetos públicos:",
+      "madeWith": "Feito com",
+      "projects": {
+        "pomodoroTimer": {
+          "title": "Timer Pomodoro"
+        },
+        "musicTheoryQuiz": {
+          "title": "Quiz de teoria musical"
+        },
+        "ordis": {
+          "title": "Ordis (Bot do Discord para Warframe)",
+          "imageAlt": "Robô num fundo amarelo vibrante",
+          "imageCredit": {
+            "photoBy": "Foto por",
+            "on": "na"
+          }
+        }
+      }
+    }
+  }
+}

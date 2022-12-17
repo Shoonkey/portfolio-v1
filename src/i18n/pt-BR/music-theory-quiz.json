@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "pageTitles": {
+      "home": "Página inicial | Quiz de teoria musical",
+      "loading": "Carregando... | Quiz de teoria musical"
+    }
+  },
+  "content": {
+    "title": "Quiz de teoria musical",
+    "home": {
+      "confirm": "Confirmar",
+      "next": "Próximo",
+      "exercise": {
+        "description": "Clique / Toque em uma linha ou espaço para pôr uma nota.",
+        "goal": "Coloque uma nota em",
+        "result": {
+          "correct": "Muito bem!",
+          "incorrect": "Oh não, você errou! Você escolheu"
+        }
+      }
+    }
+  }
+}

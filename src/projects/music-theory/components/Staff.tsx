@@ -1,8 +1,5 @@
 import { Box, Flex, Grid, Image } from "@chakra-ui/react"
 
-import TrebleClefNote from "../shared/TrebleClefNote"
-import { getNoteFromIndex } from "../util"
-
 import StaffClickableSurface from "./StackClickableSurface"
 import TimeSignature from "./TimeSignature"
 

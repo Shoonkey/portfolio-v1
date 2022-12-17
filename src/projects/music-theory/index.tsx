@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
 import { Box, Button, Flex, Heading, Spinner, Text } from "@chakra-ui/react"
 
-import BackToPortfolioButton from "../../projects/portfolio/components/BackToPortfolioButton"
-import Page from "../../projects/music-theory/components/Page"
-import Staff from "../../projects/music-theory/components/Staff"
+import Page from "../portfolio/components/Page"
+import BackToPortfolioButton from "../portfolio/components/BackToPortfolioButton"
 
+import Staff from "./components/Staff"
 import { getNoteFromIndex, getRandomNote } from "./util"
+import useI18N from "../portfolio/hooks/useI18N"
 
 type TrebleClefNote = "A" | "B" | "C" | "D" | "E" | "F" | "G"
 
@@ -16,6 +17,8 @@ interface QuizData {
 }
 
 function MusicTheoryQuiz() {
+  const i18n = useI18N("music-theory-quiz")
+
   const [quizData, setQuizData] = useState<QuizData | null>(null)
 
   // Note: state is set at first through a React effect to prevent Next's hydration error
@@ -30,7 +33,7 @@ function MusicTheoryQuiz() {
 
   if (!quizData)
     return (
-      <Page title="Loading... | Music theory quiz">
+      <Page projectName="music-theory-quiz" title="loading">
         <Flex flexGrow={1} justifyContent="center" alignItems="center">
           <Spinner />
         </Flex>
@@ -38,22 +41,10 @@ function MusicTheoryQuiz() {
     )
 
   return (
-    <Page title="Home | Music theory quiz">
-      <Flex alignItems="center" p={7}>
-        <BackToPortfolioButton />
-        <Heading
-          ml={4}
-          size={{ base: "2xl", lg: "3xl" }}
-          fontFamily="inherit"
-          display="flex"
-          alignItems="center"
-        >
-          Music theory
-        </Heading>
-      </Flex>
+    <Page projectName="music-theory-quiz" title="home">
       <Flex flexDir="column" flexGrow={1} py={4} px={6} gap={6}>
         <Text ml={6} fontSize={22} color="gray.500" letterSpacing=".8px">
-          Click / Tap a line or space to place a note.
+          {i18n.content.home.exercise.description}
         </Text>
         <Flex justifyContent="center" flexDir="column">
           <Staff
@@ -78,21 +69,21 @@ function MusicTheoryQuiz() {
                 setQuizData({ ...quizData, stage: "note-chosen" })
               }}
             >
-              Confirm
+              {i18n.content.home.confirm}
             </Button>
             {quizData.stage === "note-chosen" && (
-                <Button
-                  onClick={() => {
-                    setQuizData({
-                      stage: "choose-note",
-                      expectedNote: getRandomNote(),
-                      chosenNoteIndex: null,
-                    })
-                  }}
-                >
-                  Next
-                </Button>
-              )}
+              <Button
+                onClick={() => {
+                  setQuizData({
+                    stage: "choose-note",
+                    expectedNote: getRandomNote(),
+                    chosenNoteIndex: null,
+                  })
+                }}
+              >
+                {i18n.content.home.next}
+              </Button>
+            )}
           </Flex>
         </Flex>
         <Box>
@@ -104,7 +95,8 @@ function MusicTheoryQuiz() {
               color="#fcbd44"
               fontWeight="light"
             >
-              Place a note in <strong>{quizData.expectedNote}</strong>
+              {i18n.content.home.exercise.goal}{" "}
+              <strong>{quizData.expectedNote}</strong>
             </Heading>
           )}
           {quizData.stage === "note-chosen" && (
@@ -120,10 +112,10 @@ function MusicTheoryQuiz() {
             >
               {quizData.expectedNote ===
               getNoteFromIndex(quizData.chosenNoteIndex)
-                ? "You got it!"
-                : `Oh no, you missed! You chose ${getNoteFromIndex(
-                    quizData.chosenNoteIndex
-                  )}`}
+                ? i18n.content.home.exercise.result.correct
+                : `${
+                    i18n.content.home.exercise.result.incorrect
+                  } ${getNoteFromIndex(quizData.chosenNoteIndex)}`}
             </Text>
           )}
         </Box>

@@ -1,17 +1,28 @@
 import Head from "next/head"
-import { Box, Flex, FlexProps } from "@chakra-ui/react"
+import { Flex, FlexProps } from "@chakra-ui/react"
 import { ReactNode } from "react"
 
 import Navbar from "./Navbar"
 import Footer from "./Footer"
+import useI18N from "../hooks/useI18N"
 
 interface PageProps {
-  title: string
   children: ReactNode
+  projectName: string
+  title: string
+  showBackToPortfolioButton?: boolean
   containerProps?: FlexProps
 }
 
-function Page({ title, children, containerProps = {} }: PageProps) {
+function Page({
+  children,
+  projectName,
+  title,
+  showBackToPortfolioButton = true,
+  containerProps = {},
+}: PageProps) {
+  const i18n = useI18N(projectName)
+
   return (
     <Flex
       flexDir="column"
@@ -22,11 +33,13 @@ function Page({ title, children, containerProps = {} }: PageProps) {
       {...containerProps}
     >
       <Head>
-        <title>{title}</title>
+        <title>{i18n.meta.pageTitles[title]}</title>
         <meta name="description" content="@shoonkey's portfolio" />
       </Head>
-      <Navbar />
-      <Box as="main" flexGrow={1}>{children}</Box>
+      <Navbar title={i18n.content.title} showBackButton={showBackToPortfolioButton} />
+      <Flex flexDir="column" as="main" flexGrow={1}>
+        {children}
+      </Flex>
       <Footer />
     </Flex>
   )

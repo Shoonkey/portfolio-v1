@@ -1,6 +1,7 @@
 import { Box, Button, Heading, Flex, Text, ScaleFade } from "@chakra-ui/react"
 import { Armchair, Campfire } from "phosphor-react"
 import { useEffect, useState } from "react"
+import useI18N from "../../portfolio/hooks/useI18N"
 
 const INTERVALS = {
   WORK: 20 * 60_000,
@@ -8,6 +9,8 @@ const INTERVALS = {
 }
 
 function Clock() {
+
+  const i18n = useI18N("pomodoro-timer")
 
   const [timeInMS, setTimeInMS] = useState(INTERVALS.WORK)
   const [paused, setPaused] = useState(true)
@@ -53,7 +56,7 @@ function Clock() {
         <Text fontSize={24} fontStyle="italic" position="absolute">
           <Flex as="span" alignItems="center" gap={2}>
             <Armchair color="pink" size={64} />
-            Chill time
+            {i18n.content.home.timer.chillTime}
           </Flex>
         </Text>
       </ScaleFade>
@@ -61,7 +64,7 @@ function Clock() {
         <Text fontSize={24} fontStyle="italic">
           <Flex as="span" alignItems="center" gap={2}>
             <Campfire color="orange" size={64} />
-            Work time
+            {i18n.content.home.timer.workTime}
           </Flex>
         </Text>
       </ScaleFade>
@@ -74,7 +77,7 @@ function Clock() {
         colorScheme={paused ? "orange" : "cyan"}
         onClick={() => setPaused(!paused)}
       >
-        {paused ? "Start" : "Pause"}
+        {i18n.content.home.timer[paused ? "start" : "pause"]}
       </Button>
     </Flex>
   )
