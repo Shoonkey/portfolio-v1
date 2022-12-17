@@ -32,6 +32,7 @@ function Project({
             alt={imageAlt || name}
             borderRadius="16px"
             h="200px"
+            objectFit="contain"
           />
           {imageCredit && (
             <Box
@@ -58,13 +59,13 @@ function Project({
           {link && (
             <Link href={link}>
               <Tooltip placement="top" label="Open website">
-                <ArrowSquareOut size={32} color="cyan" />
+                <ArrowSquareOut size={32} color="pink" />
               </Tooltip>
             </Link>
           )}
           <Link href={githubLink}>
             <Tooltip placement="top" label="View code">
-              <Code size={32} color="pink" />
+              <Image src="/github-logo.png" height="32px" filter="invert(.7)" />
             </Tooltip>
           </Link>
         </Flex>
