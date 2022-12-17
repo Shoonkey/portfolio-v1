@@ -57,15 +57,15 @@ function Project({
             </Text>
           )}
           {link && (
-            <Link href={link}>
+            <Link href={link} aria-label="Open website">
               <Tooltip placement="top" label="Open website">
                 <ArrowSquareOut size={32} color="pink" />
               </Tooltip>
             </Link>
           )}
-          <Link href={githubLink}>
+          <Link href={githubLink} aria-label="View code">
             <Tooltip placement="top" label="View code">
-              <Image src="/github-logo.png" height="32px" filter="invert(.7)" />
+              <Image src="/github-logo.png" alt="Github logo" height="32px" filter="invert(.7)" />
             </Tooltip>
           </Link>
         </Flex>
