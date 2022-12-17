@@ -77,13 +77,6 @@ const Home: NextPage = () => {
             imageSource="/pomodoro-timer.png"
           />
           <Project
-            name="Ceebrowd (unofficial code online judge redesign)"
-            link="https://ceebrowd.shoonkey.com"
-            githubLink="https://github.com/Shoonkey/ceebrowd"
-            inProgress
-            imageSource="/ceebrowd.png"
-          />
-          <Project
             name="Ordis (Discord bot for Warframe)"
             githubLink="https://github.com/Shoonkey/ordis"
             inProgress
