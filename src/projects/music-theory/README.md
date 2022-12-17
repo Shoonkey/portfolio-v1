@@ -1,6 +1,6 @@
 # Music theory quiz
 
-An app to quiz you about music theory I built to help me study better
+An quiz app about music theory I built to help me study better
 
 ## Current features
 
