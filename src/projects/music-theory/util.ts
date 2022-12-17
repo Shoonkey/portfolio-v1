@@ -8,7 +8,7 @@ export function getRandomNote() {
 
 export function getNoteFromIndex(index: number | null) {
 
-  if (!index)
+  if (index === null || index === undefined)
     return
 
   const notesByIndex: TrebleClefNote[] = [
