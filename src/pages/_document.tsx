@@ -13,7 +13,7 @@ function Document() {
           crossOrigin="true"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Roboto+Slab:wght@400;700&family=Cabin:ital,wght@0,400;0,700;1,400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Roboto+Slab:wght@400;700&family=Cabin:ital,wght@0,400;0,700;1,400&family=Martian+Mono&display=swap"
           rel="stylesheet"
         />
       </Head>
