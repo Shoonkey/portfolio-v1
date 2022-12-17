@@ -2,11 +2,10 @@ import { useEffect, useState } from "react"
 import { Box, Button, Flex, Heading, Spinner, Text } from "@chakra-ui/react"
 
 import Page from "../portfolio/components/Page"
-import BackToPortfolioButton from "../portfolio/components/BackToPortfolioButton"
+import useI18N from "../portfolio/hooks/useI18N"
 
 import Staff from "./components/Staff"
 import { getNoteFromIndex, getRandomNote } from "./util"
-import useI18N from "../portfolio/hooks/useI18N"
 
 type TrebleClefNote = "A" | "B" | "C" | "D" | "E" | "F" | "G"
 
@@ -20,6 +19,9 @@ function MusicTheoryQuiz() {
   const i18n = useI18N("music-theory-quiz")
 
   const [quizData, setQuizData] = useState<QuizData | null>(null)
+
+  // Has the user changed the note placement after confirming selection and before clicking next?
+  const [reselectedAfterConfirm, setReselectedAfterConfirm] = useState(false);
 
   // Note: state is set at first through a React effect to prevent Next's hydration error
   // (https://nextjs.org/docs/messages/react-hydration-error)
@@ -49,12 +51,16 @@ function MusicTheoryQuiz() {
         <Flex justifyContent="center" flexDir="column">
           <Staff
             chosenNoteIndex={quizData.chosenNoteIndex}
-            onNoteChoice={(index) =>
+            onNoteChoice={(index) => {
+
+              if (quizData.stage === "note-chosen")
+                setReselectedAfterConfirm(true)
+              
               setQuizData({
                 ...quizData,
                 chosenNoteIndex: index,
               })
-            }
+            }}
           />
           <Flex justifyContent="center" gap={4}>
             <Button
@@ -79,6 +85,7 @@ function MusicTheoryQuiz() {
                     expectedNote: getRandomNote(),
                     chosenNoteIndex: null,
                   })
+                  setReselectedAfterConfirm(false)
                 }}
               >
                 {i18n.content.home.next}
@@ -99,7 +106,7 @@ function MusicTheoryQuiz() {
               <strong>{quizData.expectedNote}</strong>
             </Heading>
           )}
-          {quizData.stage === "note-chosen" && (
+          {quizData.stage === "note-chosen" && !reselectedAfterConfirm && (
             <Text
               textAlign="center"
               color={
