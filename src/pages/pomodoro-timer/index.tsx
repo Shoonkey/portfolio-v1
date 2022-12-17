@@ -1,9 +1,9 @@
 import { Flex, Heading } from "@chakra-ui/react"
 
-import BackToPortfolioButton from "../projects/portfolio/components/BackToPortfolioButton"
-import Page from "../projects/pomodoro-timer/components/Page"
-import Clock from "../projects/pomodoro-timer/components/Clock"
-import TodoList from "../projects/pomodoro-timer/components/TodoList"
+import BackToPortfolioButton from "../../projects/portfolio/components/BackToPortfolioButton"
+import Page from "../../projects/pomodoro-timer/components/Page"
+import Clock from "../../projects/pomodoro-timer/components/Clock"
+import TodoList from "../../projects/pomodoro-timer/components/TodoList"
 
 function PomodoroTimer() {
   return (
