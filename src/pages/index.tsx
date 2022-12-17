@@ -7,7 +7,7 @@ import Tech from "../projects/portfolio/components/Tech"
 
 const Home: NextPage = () => {
   return (
-    <Page title="Home" containerProps={{ fontSize: "1.25rem" }}>
+    <Page title="Home | Portfolio" containerProps={{ fontSize: "1.25rem" }}>
       <Flex
         flexDir={{ base: "column", lg: "row" }}
         justifyContent="center"

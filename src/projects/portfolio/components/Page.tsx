@@ -12,8 +12,6 @@ interface PageProps {
 }
 
 function Page({ title, children, containerProps = {} }: PageProps) {
-  const pageName = `${title} | Portfolio`
-
   return (
     <Flex
       flexDir="column"
@@ -24,7 +22,7 @@ function Page({ title, children, containerProps = {} }: PageProps) {
       {...containerProps}
     >
       <Head>
-        <title>{pageName}</title>
+        <title>{title}</title>
         <meta name="description" content="@shoonkey's portfolio" />
       </Head>
       <Navbar />

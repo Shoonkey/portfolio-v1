@@ -7,7 +7,7 @@ import TodoList from "../../projects/pomodoro-timer/components/TodoList"
 
 function PomodoroTimer() {
   return (
-    <Page title="Pomodoro timer">
+    <Page title="Home | Pomodoro timer">
       <Flex alignItems="center" p={7}>
         <BackToPortfolioButton />
         <Heading ml={4} size={{ base: "2xl", lg: "3xl" }} fontFamily="inherit" display="flex" alignItems="center">
