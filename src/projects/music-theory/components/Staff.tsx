@@ -1,15 +1,17 @@
 import { Box, Flex, Grid, Image } from "@chakra-ui/react"
-import { useEffect, useState } from "react"
+
+import TrebleClefNote from "../shared/TrebleClefNote"
+import { getNoteFromIndex } from "../util"
 
 import StaffClickableSurface from "./StackClickableSurface"
 import TimeSignature from "./TimeSignature"
 
 interface StaffProps {
-  notePlacedAt: number | null
-  onNotePlacement: (index: number | null) => void
+  chosenNoteIndex: number | null
+  onNoteChoice: (index: number | null) => void
 }
 
-function Staff({ notePlacedAt, onNotePlacement }: StaffProps) {
+function Staff({ chosenNoteIndex, onNoteChoice }: StaffProps) {
   const lh = 4 // Line height in pixels
   const sh = 50 // Space height in pixels
 
@@ -59,9 +61,9 @@ function Staff({ notePlacedAt, onNotePlacement }: StaffProps) {
               key={index}
               type={surfaceType}
               height={surfaceType === "line" ? lh : sh}
-              notePlaced={notePlacedAt === index}
+              notePlaced={chosenNoteIndex === index}
               onClick={() =>
-                onNotePlacement(notePlacedAt === index ? null : index)
+                onNoteChoice(chosenNoteIndex === index ? null : index)
               }
             />
           ))}

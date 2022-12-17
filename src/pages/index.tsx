@@ -73,6 +73,12 @@ const Home: NextPage = () => {
             imageSource="/pomodoro-timer.png"
           />
           <Project
+            name="Music theory quiz"
+            link="/music-theory"
+            githubLink="https://github.com/Shoonkey/portfolio/tree/main/src/projects/music-theory"
+            imageSource="/music-theory-quiz.png"
+          />
+          <Project
             name="Ordis (Discord bot for Warframe)"
             githubLink="https://github.com/Shoonkey/ordis"
             inProgress
