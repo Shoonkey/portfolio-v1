@@ -30,7 +30,9 @@ const Home: NextPage = () => {
             <Text>
               My name is <strong>Richard</strong>.
             </Text>
-            <Text>I&apos;m a full stack engineer that works mainly in frontend with:</Text>
+            <Text>
+              I&apos;m a full stack engineer that works mainly in frontend with:
+            </Text>
             <Flex
               gap={6}
               mt={3}
@@ -44,8 +46,12 @@ const Home: NextPage = () => {
               <Tech logoSrc="/next-logo.svg" name="Next" />
             </Flex>
             <Text textAlign="center" fontSize="1rem" mt={1}>
-              <Text as="span" color="gray.500" mr={2} display="inline-block">E-mail for contact:</Text>
-              <Text as="strong" letterSpacing=".8px">shoonkey.dev@gmail.com</Text>
+              <Text as="span" color="gray.500" mr={2} display="inline-block">
+                E-mail for contact:
+              </Text>
+              <Text as="strong" letterSpacing=".8px">
+                shoonkey.dev@gmail.com
+              </Text>
             </Text>
           </Box>
         </Box>
@@ -63,7 +69,7 @@ const Home: NextPage = () => {
           <Project
             name="Pomodoro timer"
             link="/pomodoro-timer"
-            githubLink="https://github.com/Shoonkey/pomodoro-timer"
+            githubLink="https://github.com/Shoonkey/portfolio/tree/main/src/projects/pomodoro-timer"
             imageSource="/pomodoro-timer.png"
           />
           <Project
