@@ -1,4 +1,4 @@
-import { chakra, Box, Flex, Grid, Heading, Image, Text } from "@chakra-ui/react"
+import { chakra, Box, Flex, Heading, Image, Text } from "@chakra-ui/react"
 import type { NextPage } from "next"
 
 import Page from "../projects/portfolio/components/Page"
@@ -59,17 +59,7 @@ const Home: NextPage = () => {
           <strong>Vue</strong> and <strong>Express</strong> in the past.
         </Text>
         <Text>Here are some of my projects:</Text>
-        <Grid
-          templateColumns={{
-            base: "1fr",
-            md: "1fr 1fr",
-            lg: "repeat(3, 1fr)",
-            xl: "repeat(4, 1fr)",
-          }}
-          justifyItems="center"
-          gap={4}
-          mt={4}
-        >
+        <Flex gap={4} mt={4} flexWrap="wrap" justifyContent="center">
           <Project
             name="Pomodoro timer"
             link="/pomodoro-timer"
@@ -103,7 +93,7 @@ const Home: NextPage = () => {
               </Text>
             }
           />
-        </Grid>
+        </Flex>
       </Box>
     </Page>
   )
