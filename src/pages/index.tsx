@@ -1,39 +1,9 @@
 import { chakra, Box, Flex, Grid, Heading, Image, Text } from "@chakra-ui/react"
 import type { NextPage } from "next"
 
-import Page from "../components/Page"
-import Project from "../components/Project"
-
-interface TechProps {
-  logoSrc: string
-  name: string
-}
-
-const Tech = ({ logoSrc, name }: TechProps) => {
-  return (
-    <Box>
-      <Image
-        src={logoSrc}
-        alt={`${name} logo`}
-        h={{ base: "48px", md: "64px" }}
-      />
-      <Text mt={2} textAlign="center">
-        <strong>{name}</strong>
-      </Text>
-    </Box>
-  )
-}
-
-const PlaceholderProject = () => {
-  return (
-    <Box w="100%" maxW="350px" style={{ textIndent: "initial" }}>
-      <Box h="200px" bg="#eb5df5" borderRadius="1.5rem" />
-      <Heading mt={2} as="h2" size="lg" textAlign="center">
-        Placeholder
-      </Heading>
-    </Box>
-  )
-}
+import Page from "../projects/portfolio/components/Page"
+import Project from "../projects/portfolio/components/Project"
+import Tech from "../projects/portfolio/components/Tech"
 
 const Home: NextPage = () => {
   return (
@@ -102,7 +72,7 @@ const Home: NextPage = () => {
         >
           <Project
             name="Pomodoro timer"
-            link="https://timer.shoonkey.com"
+            link="/pomodoro-timer"
             githubLink="https://github.com/Shoonkey/pomodoro-timer"
             imageSource="/pomodoro-timer.png"
           />
