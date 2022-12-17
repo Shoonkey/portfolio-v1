@@ -57,19 +57,15 @@ function Project({
           )}
           {link && (
             <Link href={link}>
-              <a target="_blank">
-                <Tooltip placement="top" label="Open website">
-                  <ArrowSquareOut size={32} color="cyan" />
-                </Tooltip>
-              </a>
+              <Tooltip placement="top" label="Open website">
+                <ArrowSquareOut size={32} color="cyan" />
+              </Tooltip>
             </Link>
           )}
           <Link href={githubLink}>
-            <a target="_blank">
-              <Tooltip placement="top" label="View code">
-                <Code size={32} color="pink" />
-              </Tooltip>
-            </a>
+            <Tooltip placement="top" label="View code">
+              <Code size={32} color="pink" />
+            </Tooltip>
           </Link>
         </Flex>
       </Flex>
