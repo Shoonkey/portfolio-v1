@@ -16,7 +16,7 @@ function Navbar({ title, showBackButton = true }: NavbarProps) {
     <Flex as="header" mb={4} justifyContent="space-between" alignItems="center" gap={4}>
       {showBackButton && <BackToPortfolioButton />}
       <Flex flexGrow={1} justifyContent="space-between" alignItems="center">
-        <Heading as="h1" size="2xl" fontFamily="Arvo">
+        <Heading as="h1" size={{ base: "md", md: "2xl" }} fontFamily="Arvo">
           {title}
         </Heading>
         <Select
