@@ -1,9 +1,11 @@
 import { Box, Flex, Grid, Image } from "@chakra-ui/react"
+import Clef from "../shared/Clef"
 
 import StaffClickableSurface from "./StackClickableSurface"
 import TimeSignature from "./TimeSignature"
 
 interface StaffProps {
+  clef: Clef
   chosenNoteIndex: number | null
   onNoteChoice: (index: number | null) => void
 }

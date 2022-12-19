@@ -3,7 +3,7 @@
     "pageTitles": {
       "home": "Home | Portfolio"
     },
-    "backToPortfolio": "Back to portfolio"
+    "goBack": "Go back"
   },
   "content": {
     "title": "Portfolio",

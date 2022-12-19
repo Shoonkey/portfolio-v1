@@ -2,12 +2,19 @@
   "meta": {
     "pageTitles": {
       "home": "Home | Music theory quiz",
-      "loading": "Loading... | Music theory quiz"
+      "loading": "Loading... | Music theory quiz",
+      "placeNote": "Place the note | Music theory quiz"
     }
   },
   "content": {
     "title": "Music theory quiz",
     "home": {
+      "chooseQuiz": "Choose a quiz",
+      "quiz": {
+        "placeNoteTreble": "Place the note (treble clef)"
+      }
+    },
+    "placeNote": {
       "confirm": "Confirm",
       "next": "Next",
       "exercise": {

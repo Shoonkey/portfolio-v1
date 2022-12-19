@@ -1,6 +1,6 @@
 import { Flex, Heading, Select } from "@chakra-ui/react"
 import { useContext } from "react"
-import BackToPortfolioButton from "./BackToPortfolioButton"
+import BackButton from "./BackButton"
 
 import { I18NContext, SupportedLanguage } from "./I18NProvider"
 
@@ -13,8 +13,14 @@ function Navbar({ title, showBackButton = true }: NavbarProps) {
   const { currentLanguage, changeLanguage } = useContext(I18NContext)
 
   return (
-    <Flex as="header" mb={4} justifyContent="space-between" alignItems="center" gap={4}>
-      {showBackButton && <BackToPortfolioButton />}
+    <Flex
+      as="header"
+      mb={4}
+      justifyContent="space-between"
+      alignItems="center"
+      gap={4}
+    >
+      {showBackButton && <BackButton />}
       <Flex flexGrow={1} justifyContent="space-between" alignItems="center">
         <Heading as="h1" size={{ base: "md", md: "2xl" }} fontFamily="Arvo">
           {title}
