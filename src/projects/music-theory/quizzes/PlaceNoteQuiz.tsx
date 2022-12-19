@@ -36,7 +36,7 @@ function PlaceNoteQuiz({ clef }: PlaceNoteQuizProps) {
       expectedNote: getRandomNote(clef),
       chosenNoteIndex: null,
     })
-  }, [])
+  }, [clef])
 
   if (!quizData)
     return (
