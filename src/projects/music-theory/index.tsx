@@ -24,8 +24,8 @@ function MusicTheoryQuizList({ quizzes }: MusicTheoryQuizListProps) {
           </Heading>
         </Flex>
         <Flex flexDir="column" flexWrap="wrap" alignItems="center">
-          {quizzes.map((quiz) => (
-            <Link href={quiz.href}>
+          {quizzes.map((quiz, index) => (
+            <Link href={quiz.href} key={`quiz-${index}`}>
               <Heading
                 as="h4"
                 size="lg"

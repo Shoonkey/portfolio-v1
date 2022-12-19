@@ -12,7 +12,7 @@ function MusicTheoryProject() {
       name: i18n.content.home.quiz.placeNoteTreble,
       href: "/music-theory/quiz/place-note",
     }
-  ]), [])
+  ]), [i18n])
 
   return <MusicTheoryQuizList quizzes={quizzes} />
 }
