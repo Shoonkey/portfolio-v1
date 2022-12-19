@@ -6,13 +6,13 @@ import { useRouter } from "next/router"
 
 function BackButton() {
   const i18n = useI18N("portfolio")
-  const iconSize = useBreakpointValue({ base: 24, md: 48 })
+  // const iconSize = useBreakpointValue({ base: 24, md: 48 })
   const router = useRouter()
 
   return (
     <Tooltip label={i18n.meta.goBack}>
-      <Button variant="transparent" onClick={() => router.back()} aria-label={i18n.meta.goBack}>
-        <ArrowLeft size={iconSize} />
+      <Button minW={8} variant="transparent" onClick={() => router.back()} aria-label={i18n.meta.goBack}>
+        <ArrowLeft size={48} />
       </Button>
     </Tooltip>
   )

@@ -16,13 +16,19 @@ function Navbar({ title, showBackButton = true }: NavbarProps) {
     <Flex
       as="header"
       mb={4}
-      justifyContent="space-between"
+      justifyContent={{ base: "center", md: "space-between" }}
       alignItems="center"
       gap={4}
     >
       {showBackButton && <BackButton />}
-      <Flex flexGrow={1} justifyContent="space-between" alignItems="center">
-        <Heading as="h1" size={{ base: "md", md: "2xl" }} fontFamily="Arvo">
+      <Flex
+        flexGrow={{ base: 0, md: 1 }}
+        flexDir={{ base: "column", md: "row" }}
+        justifyContent="space-between"
+        alignItems="center"
+        gap={{ base: 3, md: 0 }}
+      >
+        <Heading as="h1" size={{ base: "xl", md: "2xl" }} fontFamily="Arvo" textAlign="center">
           {title}
         </Heading>
         <Select

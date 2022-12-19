@@ -28,7 +28,7 @@ function Page({
       flexDir="column"
       minH="100vh"
       fontFamily="'Roboto Slab', sans-serif"
-      px={{ base: 3, md: 10 }}
+      px={{ base: 4, md: 10 }}
       py={6}
       {...containerProps}
     >
