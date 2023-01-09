@@ -24,12 +24,7 @@
           "title": "Music theory quiz"
         },
         "ordis": {
-          "title": "Ordis (Discord bot for Warframe)",
-          "imageAlt": "Robot in a bright yellow background",
-          "imageCredit": {
-            "photoBy": "Photo by",
-            "on": "on"
-          }
+          "title": "Ordis (Discord bot for Warframe)"
         }
       }
     }

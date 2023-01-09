@@ -24,12 +24,7 @@
           "title": "Quiz de teoria musical"
         },
         "ordis": {
-          "title": "Ordis (Bot do Discord para Warframe)",
-          "imageAlt": "Robô num fundo amarelo vibrante",
-          "imageCredit": {
-            "photoBy": "Foto por",
-            "on": "na"
-          }
+          "title": "Ordis (Bot do Discord para Warframe)"
         }
       }
     }

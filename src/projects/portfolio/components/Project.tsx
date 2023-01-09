@@ -8,7 +8,7 @@ interface ProjectProps {
   type: "website" | "bot"
   link?: string
   githubLink: string
-  imageSource: string
+  imageSource?: string
   imageAlt?: string
   imageCredit?: string | ReactNode
   inProgress?: boolean

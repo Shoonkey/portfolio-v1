@@ -94,28 +94,6 @@ const Home: NextPage = () => {
             name={i18n.content.home.projects.ordis.title}
             githubLink="https://github.com/Shoonkey/ordis"
             inProgress
-            imageSource="/robot.jpg"
-            imageAlt={i18n.content.home.projects.ordis.imageAlt}
-            imageCredit={
-              <Text>
-                {i18n.content.home.projects.ordis.imageCredit.photoBy}{" "}
-                <chakra.a
-                  color="pink"
-                  textDecoration="underline"
-                  href="https://unsplash.com/@hobijist3d?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                >
-                  hobijist3d
-                </chakra.a>{" "}
-                {i18n.content.home.projects.ordis.imageCredit.on}{" "}
-                <chakra.a
-                  color="pink"
-                  textDecoration="underline"
-                  href="https://unsplash.com/s/photos/robot?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                >
-                  Unsplash
-                </chakra.a>
-              </Text>
-            }
           />
         </Flex>
       </Box>
