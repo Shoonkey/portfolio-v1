@@ -3,6 +3,8 @@ import { ReactNode } from "react"
 import { Heading, Image, Flex, Text, Tooltip } from "@chakra-ui/react"
 import { Robot, ArrowSquareOut } from "phosphor-react"
 
+import useI18N from "../hooks/useI18N"
+
 interface ProjectProps {
   name: string
   type: "website" | "bot"
@@ -23,6 +25,8 @@ function Project({
   imageAlt,
   inProgress = false,
 }: ProjectProps) {
+  const i18n = useI18N("portfolio");
+
   return (
     <Flex flexDir="column" style={{ textIndent: "initial" }}>
       <Flex flexDir="column" p={4} bg="gray.900" borderRadius="32px">
@@ -48,7 +52,7 @@ function Project({
         <Flex justifyContent="end" alignItems="center" gap={2} mt={2}>
           {inProgress && (
             <Text fontSize="1rem" color="gray">
-              In progress
+              {i18n.content.home.projectInProgress}
             </Text>
           )}
           {link && (
