@@ -76,18 +76,21 @@ const Home: NextPage = () => {
         <Text>{i18n.content.home.projectHeader}</Text>
         <Flex gap={4} mt={4} flexWrap="wrap" justifyContent="center">
           <Project
+            type="website"
             name={i18n.content.home.projects.pomodoroTimer.title}
             link="/pomodoro-timer"
             githubLink="https://github.com/Shoonkey/portfolio/tree/main/src/projects/pomodoro-timer"
             imageSource="/pomodoro-timer.png"
           />
           <Project
+            type="website"
             name={i18n.content.home.projects.musicTheoryQuiz.title}
             link="/music-theory"
             githubLink="https://github.com/Shoonkey/portfolio/tree/main/src/projects/music-theory"
             imageSource="/music-theory-quiz.png"
           />
           <Project
+            type="bot"
             name={i18n.content.home.projects.ordis.title}
             githubLink="https://github.com/Shoonkey/ordis"
             inProgress

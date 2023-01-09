@@ -1,10 +1,11 @@
-import { Box, Heading, Image, Flex, Text, Tooltip } from "@chakra-ui/react"
 import Link from "next/link"
 import { ReactNode } from "react"
-import { Code, ArrowSquareOut } from "phosphor-react"
+import { Heading, Image, Flex, Text, Tooltip } from "@chakra-ui/react"
+import { Robot, ArrowSquareOut } from "phosphor-react"
 
 interface ProjectProps {
   name: string
+  type: "website" | "bot"
   link?: string
   githubLink: string
   imageSource: string
@@ -15,41 +16,35 @@ interface ProjectProps {
 
 function Project({
   name,
+  type,
   link,
   githubLink,
   imageSource,
   imageAlt,
-  imageCredit,
   inProgress = false,
 }: ProjectProps) {
   return (
     <Flex flexDir="column" style={{ textIndent: "initial" }}>
       <Flex flexDir="column" p={4} bg="gray.900" borderRadius="32px">
-        <Box className="image-container" position="relative">
-          <Image
-            flexGrow={1}
-            src={imageSource}
-            alt={imageAlt || name}
-            borderRadius="16px"
-            h="200px"
-            objectFit="contain"
-          />
-          {imageCredit && (
-            <Box
-              position="absolute"
-              bottom={0}
-              left="50%"
-              transform="translateX(-50%)"
-              bg="black"
-              px={2}
-              py={1}
-              borderRadius="8px 8px 0 0"
-              fontSize=".75rem"
-            >
-              {imageCredit}
-            </Box>
-          )}
-        </Box>
+        <Flex h="200px" justifyContent="center" alignItems="center">
+          {
+            type === "website" && imageSource && (
+              <Image
+                flexGrow={1}
+                src={imageSource}
+                alt={imageAlt || name}
+                borderRadius="16px"
+                h="200px"
+                objectFit="contain"
+              />
+            )
+          }
+          {
+            type === "bot" && (
+              <Robot size={128} color="#efae32" />
+            )
+          }
+        </Flex>
         <Flex justifyContent="end" alignItems="center" gap={2} mt={2}>
           {inProgress && (
             <Text fontSize="1rem" color="gray">
@@ -70,7 +65,7 @@ function Project({
           </Link>
         </Flex>
       </Flex>
-      <Heading mt={2} as="h2" size="md" textAlign="center">
+      <Heading mt={4} as="h2" size="md" textAlign="center">
         {name}
       </Heading>
     </Flex>
