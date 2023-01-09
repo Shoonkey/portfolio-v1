@@ -103,7 +103,7 @@ const Home: NextPage = () => {
                 >
                   hobijist3d
                 </chakra.a>{" "}
-                {i18n.content.home.projects.ordis.imageCredit.on}
+                {i18n.content.home.projects.ordis.imageCredit.on}{" "}
                 <chakra.a
                   color="pink"
                   textDecoration="underline"
