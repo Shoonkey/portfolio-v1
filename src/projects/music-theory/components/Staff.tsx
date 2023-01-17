@@ -1,7 +1,7 @@
 import { Box, Flex, Grid, Image } from "@chakra-ui/react"
 import Clef from "../shared/Clef"
 
-import StaffClickableSurface from "./StackClickableSurface"
+import StaffClickableSurface from "./StaffClickableSurface"
 import TimeSignature from "./TimeSignature"
 
 interface StaffProps {
