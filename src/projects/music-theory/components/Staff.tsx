@@ -10,7 +10,7 @@ interface StaffProps {
   onNoteChoice: (index: number | null) => void
 }
 
-function Staff({ chosenNoteIndex, onNoteChoice }: StaffProps) {
+function Staff({ clef, chosenNoteIndex, onNoteChoice }: StaffProps) {
   const lh = 4 // Line height in pixels
   const sh = 50 // Space height in pixels
 
@@ -26,6 +26,13 @@ function Staff({ chosenNoteIndex, onNoteChoice }: StaffProps) {
     "line",
   ]
 
+  let clefImage: { src: string; alt: string; transform: string; } | undefined
+
+  if (clef === "treble")
+    clefImage = { src: "/treble-clef.svg", alt: "Treble clef", transform: "scale(1.7, 1.7) translateX(20px)" };
+  else if (clef === "bass")
+    clefImage = { src: "/bass-clef.png", alt: "Bass clef", transform: "scale(.9, .9) translateX(12px) translateY(-12px)" };
+
   return (
     <Box w="100%" flexGrow={1} position="relative">
       <Box overflowX="auto">
@@ -37,18 +44,22 @@ function Staff({ chosenNoteIndex, onNoteChoice }: StaffProps) {
           alignItems="center"
           position="relative"
         >
-          <Image
-            src="/treble-clef.svg"
-            alt="Treble clef"
-            pos="absolute"
-            filter="invert(1)"
-            h={`${lh * 5 + sh * 4}px`}
-            transform="scale(1.7, 1.7) translateX(20px)"
-            zIndex={1}
-          />
+          {
+            clefImage && (
+              <Image
+                src={clefImage.src}
+                alt={clefImage.alt}
+                pos="absolute"
+                filter="invert(1)"
+                h={`${lh * 5 + sh * 4}px`}
+                transform={clefImage.transform}
+                zIndex={1}
+              />
+            )
+          }
           <Flex
             pos="absolute"
-            transform="translateX(190px)"
+            transform="translateX(200px)"
             h={`${lh * 5 + sh * 4}px`}
             zIndex={1}
             color="gray.500"

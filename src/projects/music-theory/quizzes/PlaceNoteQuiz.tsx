@@ -33,7 +33,7 @@ function PlaceNoteQuiz({ clef }: PlaceNoteQuizProps) {
   useEffect(() => {
     setQuizData({
       stage: "choose-note",
-      expectedNote: getRandomNote(clef),
+      expectedNote: getRandomNote(),
       chosenNoteIndex: null,
     })
   }, [clef])
@@ -88,7 +88,7 @@ function PlaceNoteQuiz({ clef }: PlaceNoteQuizProps) {
                 onClick={() => {
                   setQuizData({
                     stage: "choose-note",
-                    expectedNote: getRandomNote(clef),
+                    expectedNote: getRandomNote(),
                     chosenNoteIndex: null,
                   })
                   setReselectedAfterConfirm(false)

@@ -10,7 +10,11 @@ function MusicTheoryProject() {
   const quizzes: QuizInfo[] = useMemo(() => ([
     {
       name: i18n.content.home.quiz.placeNoteTreble,
-      href: "/music-theory/quiz/place-note",
+      href: "/music-theory/quiz/place-note?clef=treble",
+    },
+    {
+      name: i18n.content.home.quiz.placeNoteBass,
+      href: "/music-theory/quiz/place-note?clef=bass",
     }
   ]), [i18n])
 

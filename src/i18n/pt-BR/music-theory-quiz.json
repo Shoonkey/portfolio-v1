@@ -11,7 +11,8 @@
     "home": {
       "chooseQuiz": "Escolha um quiz",
       "quiz": {
-        "placeNoteTreble": "Posicione a nota (clave de sol)"
+        "placeNoteTreble": "Posicione a nota (clave de sol)",
+        "placeNoteBass": "Posicione a nota (clave de fá)"
       }
     },
     "placeNote": {

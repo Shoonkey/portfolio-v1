@@ -23,7 +23,7 @@ function MusicTheoryQuizList({ quizzes }: MusicTheoryQuizListProps) {
             {i18n.content.home.chooseQuiz}
           </Heading>
         </Flex>
-        <Flex flexDir="column" flexWrap="wrap" alignItems="center">
+        <Flex flexWrap="wrap" alignItems="center" gap={4}>
           {quizzes.map((quiz, index) => (
             <Link href={quiz.href} key={`quiz-${index}`}>
               <Heading

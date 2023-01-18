@@ -11,7 +11,8 @@
     "home": {
       "chooseQuiz": "Choose a quiz",
       "quiz": {
-        "placeNoteTreble": "Place the note (treble clef)"
+        "placeNoteTreble": "Place the note (treble clef)",
+        "placeNoteBass": "Place the note (bass clef)"
       }
     },
     "placeNote": {
