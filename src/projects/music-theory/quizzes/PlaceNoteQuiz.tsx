@@ -39,7 +39,7 @@ function PlaceNoteQuiz({ clef }: PlaceNoteQuizProps) {
 
   if (!quizData)
     return (
-      <Page projectName="music-theory-quiz" title="loading">
+      <Page projectName="music-theory-quiz" title="placeNote">
         <Flex flexGrow={1} justifyContent="center" alignItems="center">
           <Spinner />
         </Flex>

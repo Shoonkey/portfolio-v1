@@ -53,7 +53,7 @@ function CircleOfFifthsQuiz() {
 
   if (!quizData)
     return (
-      <Page projectName="music-theory-quiz" title="loading">
+      <Page projectName="music-theory-quiz" title="circleOfFifths">
         <Flex flexGrow={1} justifyContent="center" alignItems="center">
           <Spinner />
         </Flex>
