@@ -1,7 +1,7 @@
 import { Box, Flex, Grid, Image } from "@chakra-ui/react"
-import Clef from "../shared/Clef"
 
-import StaffClickableSurface from "./StaffClickableSurface"
+import Clef from "../../shared/Clef"
+import ClickableSurface from "./ClickableSurface"
 import TimeSignature from "./TimeSignature"
 
 interface StaffProps {
@@ -67,7 +67,7 @@ function Staff({ clef, chosenNoteIndex, onNoteChoice }: StaffProps) {
             <TimeSignature notesPerBar={4} unitNote={4} />
           </Flex>
           {surfaces.map((surfaceType, index) => (
-            <StaffClickableSurface
+            <ClickableSurface
               key={index}
               type={surfaceType}
               height={surfaceType === "line" ? lh : sh}

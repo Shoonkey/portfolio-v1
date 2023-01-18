@@ -1,16 +1,26 @@
-import { Box, Button } from "@chakra-ui/react"
-import { useEffect, useState } from "react"
+import { Box } from "@chakra-ui/react"
+import { useState } from "react"
 
-import { Line, Space } from "./surfaces"
-
-interface StaffClickableSurface {
+interface ClickableSurfaceProps {
   type: "line" | "space"
   height: number
   notePlaced: boolean
   onClick: () => void
 }
 
-function StaffClickableSurface({ type, height, notePlaced, onClick }: StaffClickableSurface) {
+interface SurfaceProps {
+  height: number
+}
+
+const Line = ({ height }: SurfaceProps) => (
+  <Box w="100%" py={4}>
+    <Box h={`${height}px`} background="#e2e2e2" />
+  </Box>
+)
+
+const Space = ({ height }: SurfaceProps) => <Box w="100%" h={`${height}px`} />
+
+function ClickableSurface({ type, height, notePlaced, onClick }: ClickableSurfaceProps) {
   const [showButton, setShowButton] = useState(false)
 
   return (
@@ -39,4 +49,4 @@ function StaffClickableSurface({ type, height, notePlaced, onClick }: StaffClick
   )
 }
 
-export default StaffClickableSurface
+export default ClickableSurface
