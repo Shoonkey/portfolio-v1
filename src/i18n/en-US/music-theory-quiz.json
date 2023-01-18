@@ -29,7 +29,7 @@
     },
     "circleOfFifths": {
       "confirm": "Confirm",
-      "next": "Próximo",
+      "next": "Next",
       "exerciseDescription": "Which piece of the circle of fifths is missing?",
       "answerButton": "That's it!",
       "result": {
