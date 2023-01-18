@@ -4,15 +4,14 @@ import { Box, Button, Flex, Heading, Spinner, Text } from "@chakra-ui/react"
 import Page from "../../portfolio/components/Page"
 import useI18N from "../../portfolio/hooks/useI18N"
 
-import Staff from "../components/Staff"
+import Note from "../shared/Note"
 import Clef from "../shared/Clef"
+import Staff from "../components/Staff"
 import { getNoteFromIndex, getRandomNote } from "./util"
-
-type TrebleClefNote = "A" | "B" | "C" | "D" | "E" | "F" | "G"
 
 interface QuizData {
   stage: "choose-note" | "note-chosen"
-  expectedNote: TrebleClefNote
+  expectedNote: Note
   chosenNoteIndex: number | null
 }
 
