@@ -12,7 +12,8 @@
       "chooseQuiz": "Escolha um quiz",
       "quiz": {
         "placeNoteTreble": "Posicione a nota (clave de sol)",
-        "placeNoteBass": "Posicione a nota (clave de fá)"
+        "placeNoteBass": "Posicione a nota (clave de fá)",
+        "circleOfFifths": "Círculo de Quintas"
       }
     },
     "placeNote": {
@@ -25,6 +26,16 @@
           "correct": "Muito bem!",
           "incorrect": "Oh não, você errou! Você escolheu"
         }
+      }
+    },
+    "circleOfFifths": {
+      "confirm": "Confirmar",
+      "next": "Próximo",
+      "exerciseDescription": "Que parte do círculo de quintas está faltando?",
+      "answerButton": "É isso!",
+      "result": {
+        "correct": "Muito bem!",
+        "incorrect": "Oh não, você errou. A resposta era"
       }
     }
   }

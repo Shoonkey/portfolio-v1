@@ -7,7 +7,7 @@ import useI18N from "../../portfolio/hooks/useI18N"
 import Note from "../shared/Note"
 import Clef from "../shared/Clef"
 import Staff from "../components/Staff"
-import { getNoteFromIndex, getRandomNote } from "./util"
+import { getNoteFromIndex, getRandomPiece } from "./util"
 
 interface QuizData {
   stage: "choose-note" | "note-chosen"
@@ -32,7 +32,7 @@ function PlaceNoteQuiz({ clef }: PlaceNoteQuizProps) {
   useEffect(() => {
     setQuizData({
       stage: "choose-note",
-      expectedNote: getRandomNote(),
+      expectedNote: getRandomPiece({ type: "note" }) as Note,
       chosenNoteIndex: null,
     })
   }, [clef])
@@ -87,7 +87,7 @@ function PlaceNoteQuiz({ clef }: PlaceNoteQuizProps) {
                 onClick={() => {
                   setQuizData({
                     stage: "choose-note",
-                    expectedNote: getRandomNote(),
+                    expectedNote: getRandomPiece({ type: "note" }) as Note,
                     chosenNoteIndex: null,
                   })
                   setReselectedAfterConfirm(false)

@@ -15,6 +15,10 @@ function MusicTheoryProject() {
     {
       name: i18n.content.home.quiz.placeNoteBass,
       href: "/music-theory/quiz/place-note?clef=bass",
+    },
+    {
+      name: i18n.content.home.quiz.circleOfFifths,
+      href: "/music-theory/quiz/circle-of-fifths"
     }
   ]), [i18n])
 
