@@ -26,6 +26,9 @@
         },
         "ordis": {
           "title": "Ordis (Discord bot for Warframe)"
+        },
+        "flashCardApp": {
+          "title": "Flash cards to study with"
         }
       }
     }
