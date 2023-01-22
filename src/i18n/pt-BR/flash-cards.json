@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "pageTitles": {
+      "home": "Página inicial | Estude usando flash cards"
+    }
+  },
+  "content": {
+    "title": "Estude usando flash cards",
+    "home": {
+      "dataNotice": "Todos os seus dados são salvos localmente no seu dispositivo.",
+      "emptyCardPlaceholder": {
+        "label": "Adicione cards para começar",
+        "description": "Adicione pelo menos 5 cards para começar a estudar"
+      }
+    },
+    "addCardsDialog": {
+      "title": "Adicionar cards",
+      "addButton": "Adicionar",
+      "form": {
+        "label": {
+          "title": "Rótulo",
+          "helperText": "Um rótulo simples, como uma palavra.",
+          "errorMessage": "É necessário definir um rótulo."
+        },
+        "description": {
+          "title": "Descrição",
+          "helperText": "Uma descrição que elabore sobre o rótulo.",
+          "errorMessage": "É necessário definir uma descrição."
+        }
+      }
+    }
+  }
+}

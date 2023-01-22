@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "pageTitles": {
+      "home": "Home | Study using flash cards"
+    }
+  },
+  "content": {
+    "title": "Study using flash cards",
+    "home": {
+      "dataNotice": "All your data is saved locally on your current device.",
+      "emptyCardPlaceholder": {
+        "label": "Add cards to begin",
+        "description": "Add at least 5 cards to begin studying"
+      }
+    },
+    "addCardsDialog": {
+      "title": "Add cards",
+      "addButton": "Add",
+      "form": {
+        "label": {
+          "title": "Label",
+          "helperText": "A simple label, like a word.",
+          "errorMessage": "You must define a label."
+        },
+        "description": {
+          "title": "Description",
+          "helperText": "A description that elaborates about the label.",
+          "errorMessage": "You must define a description."
+        }
+      }
+    }
+  }
+}
