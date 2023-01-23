@@ -1,8 +1,7 @@
-// import FlashCardApp from "../../projects/flash-card-app";
+import FlashCardApp from "../../projects/flash-card-app";
 
 function FlashCardProject() {
-  return null;
-  // return <FlashCardApp />;
+  return <FlashCardApp />;
 }
 
 export default FlashCardProject;
