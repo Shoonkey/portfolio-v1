@@ -89,13 +89,13 @@ const Home: NextPage = () => {
             githubLink="https://github.com/Shoonkey/portfolio/tree/main/src/projects/music-theory"
             imageSource="/music-theory-quiz.png"
           />
-          <Project
+          {/* <Project
             type="website"
             name={i18n.content.home.projects.flashCardApp.title}
             link="/flash-card-app"
             githubLink="https://github.com/Shoonkey/portfolio/tree/main/src/projects/flash-card-app"
             imageSource="/flash-cards.png"
-          />
+          /> */}
           <Project
             type="bot"
             name={i18n.content.home.projects.ordis.title}
