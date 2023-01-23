@@ -113,9 +113,6 @@ function FlashCardApp() {
                   metadata.cards as CardData[]
                 );
 
-                console.log("Cards:");
-                console.table(stageCards);
-
                 setMetadata({
                   ...metadata,
                   stage: nextStage,
