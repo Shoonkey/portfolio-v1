@@ -8,6 +8,7 @@
     "title": "Estude usando flash cards",
     "home": {
       "dataNotice": "Todos os seus dados são salvos localmente no seu dispositivo.",
+      "explanation": "Clique em um card para virá-lo e ver sua descrição.",
       "emptyCardPlaceholder": {
         "label": "Adicione cards para começar",
         "description": "Adicione pelo menos 5 cards para começar a estudar"

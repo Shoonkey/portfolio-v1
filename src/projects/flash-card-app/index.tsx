@@ -11,7 +11,11 @@ import AddCardsButton from "./components/AddCardsButton";
 import AddCardsDialog from "./components/AddCardsDialog";
 import FlashCard from "./components/FlashCard";
 import { drawFirstDeck } from "./util/card";
-import { getStageCardPositions, getNextStage, getStageCards } from "./util/stage";
+import {
+  getStageCardPositions,
+  getNextStage,
+  getStageCards,
+} from "./util/stage";
 
 interface AppMetadata {
   playable: boolean;
@@ -76,6 +80,16 @@ function FlashCardApp() {
       >
         {i18n.content.home.dataNotice}
       </Heading>
+      <Heading
+        as="h2"
+        size="md"
+        ml={{ base: 0, md: 24 }}
+        mt={2}
+        textAlign={{ base: "center", md: "left" }}
+        color="gray.500"
+      >
+        {i18n.content.home.explanation}
+      </Heading>
       <Flex flexGrow={1} position="relative">
         {cardPositions.map((position, index) => {
           return (
@@ -93,11 +107,19 @@ function FlashCardApp() {
               onClick={() => {
                 if (!metadata.playable) return;
                 const nextStage = getNextStage(metadata.stage, position);
+                const stageCards = getStageCards(
+                  metadata.stage,
+                  position,
+                  metadata.cards as CardData[]
+                );
+
+                console.log("Cards:");
+                console.table(stageCards);
 
                 setMetadata({
                   ...metadata,
-                  stage: getNextStage(metadata.stage, position),
-                  cards: getStageCards(nextStage, position, metadata.cards as CardData[])
+                  stage: nextStage,
+                  cards: stageCards,
                 });
               }}
             />

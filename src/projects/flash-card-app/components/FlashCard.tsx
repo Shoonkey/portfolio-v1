@@ -1,4 +1,5 @@
 import { Box, Center, Heading, Text } from "@chakra-ui/react";
+import { useState } from "react";
 
 import CardData from "../shared/CardData";
 import CardPosition from "../shared/CardPosition";
@@ -45,6 +46,8 @@ function InactiveOverlay({ onClick }: { onClick: FlashCardProps["onClick"] }) {
 }
 
 function FlashCard({ position, frontText, backText, onClick }: FlashCardProps) {
+  const [flipped, setFlipped] = useState(false);
+
   const isActive = position === "middle";
 
   const computedPosition: { top: number; left: number; rotation: number } = {
@@ -76,7 +79,7 @@ function FlashCard({ position, frontText, backText, onClick }: FlashCardProps) {
       break;
     case "invisible-right":
       computedPosition.top = 40;
-      computedPosition.left = 140;
+      computedPosition.left = 160;
       computedPosition.rotation = 60;
       break;
   }
@@ -92,6 +95,7 @@ function FlashCard({ position, frontText, backText, onClick }: FlashCardProps) {
       w="min(80%, 400px)"
       h="300px"
       style={{ perspective: "1000px" }}
+      onClick={() => setFlipped(!flipped)}
     >
       <Box
         bg="#3c008f"
@@ -104,7 +108,7 @@ function FlashCard({ position, frontText, backText, onClick }: FlashCardProps) {
         h="100%"
         transition="transform .4s"
         style={{ transformStyle: "preserve-3d" }}
-        _hover={{ transform: `rotateY(${isActive ? -180 : 0}deg)` }}
+        transform={`rotateY(${isActive && flipped ? -180 : 0}deg)`}
       >
         <CardSide side="front" text={frontText} />
         <CardSide side="back" text={backText} />

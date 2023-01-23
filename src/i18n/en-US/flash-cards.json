@@ -8,6 +8,7 @@
     "title": "Study using flash cards",
     "home": {
       "dataNotice": "All your data is saved locally on your current device.",
+      "explanation": "Click on a card to flip it and see its description.",
       "emptyCardPlaceholder": {
         "label": "Add cards to begin",
         "description": "Add at least 5 cards to begin studying"

@@ -43,7 +43,7 @@ export function drawFirstDeck(): CardData[] {
   return selectedCards;
 }
 
-export function drawNextCard({ blacklist }: { blacklist: string[] }) {
+export function drawNextCard({ blacklist }: { blacklist: string[] }): CardData {
   const availableIndices = [];
   const cards = getCards();
 
