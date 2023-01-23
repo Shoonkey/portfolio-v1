@@ -1,19 +1,17 @@
-import Link from "next/link"
-import { ReactNode } from "react"
-import { Heading, Image, Flex, Text, Tooltip } from "@chakra-ui/react"
-import { Robot, ArrowSquareOut } from "phosphor-react"
+import Link from "next/link";
+import { Heading, Image, Flex, Text, Tooltip } from "@chakra-ui/react";
+import { Robot } from "phosphor-react";
 
-import useI18N from "../hooks/useI18N"
+import useI18N from "../hooks/useI18N";
 
 interface ProjectProps {
-  name: string
-  type: "website" | "bot"
-  link?: string
-  githubLink: string
-  imageSource?: string
-  imageAlt?: string
-  imageCredit?: string | ReactNode
-  inProgress?: boolean
+  name: string;
+  type: "website" | "bot";
+  link?: string;
+  githubLink: string;
+  imageSource?: string;
+  imageAlt?: string;
+  inProgress?: boolean;
 }
 
 function Project({
@@ -30,9 +28,9 @@ function Project({
   return (
     <Flex flexDir="column" style={{ textIndent: "initial" }}>
       <Flex flexDir="column" p={4} bg="gray.900" borderRadius="32px">
-        <Flex h="200px" justifyContent="center" alignItems="center">
-          {
-            type === "website" && imageSource && (
+        <Link href={link || "#"} aria-label="Open website">
+          <Flex h="200px" justifyContent="center" alignItems="center">
+            {type === "website" && imageSource && (
               <Image
                 flexGrow={1}
                 src={imageSource}
@@ -41,30 +39,24 @@ function Project({
                 h="200px"
                 objectFit="contain"
               />
-            )
-          }
-          {
-            type === "bot" && (
-              <Robot size={128} color="#efae32" />
-            )
-          }
-        </Flex>
+            )}
+            {type === "bot" && <Robot size={128} color="#efae32" />}
+          </Flex>
+        </Link>
         <Flex justifyContent="end" alignItems="center" gap={2} mt={2}>
           {inProgress && (
             <Text fontSize="1rem" color="gray">
               {i18n.content.home.projectInProgress}
             </Text>
           )}
-          {link && (
-            <Link href={link} aria-label="Open website">
-              <Tooltip placement="top" label="Open website">
-                <ArrowSquareOut size={32} color="pink" />
-              </Tooltip>
-            </Link>
-          )}
           <Link href={githubLink} aria-label="View code">
             <Tooltip placement="top" label="View code">
-              <Image src="/github-logo.png" alt="Github logo" height="32px" filter="invert(.7)" />
+              <Image
+                src="/github-logo.png"
+                alt="Github logo"
+                height="32px"
+                filter="invert(.7)"
+              />
             </Tooltip>
           </Link>
         </Flex>
@@ -73,7 +65,7 @@ function Project({
         {name}
       </Heading>
     </Flex>
-  )
+  );
 }
 
-export default Project
+export default Project;
