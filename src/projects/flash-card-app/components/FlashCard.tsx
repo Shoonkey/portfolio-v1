@@ -95,7 +95,7 @@ function FlashCard({ position, frontText, backText, onClick }: FlashCardProps) {
       w="min(80%, 400px)"
       h="300px"
       style={{ perspective: "1000px" }}
-      onClick={() => setFlipped(!flipped)}
+      onClick={() => isActive && setFlipped(!flipped)}
     >
       <Box
         bg="#3c008f"
