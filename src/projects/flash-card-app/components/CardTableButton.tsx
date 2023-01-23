@@ -1,13 +1,13 @@
 import { Button, Tooltip } from "@chakra-ui/react";
-import { Plus } from "phosphor-react";
+import { ListPlus } from "phosphor-react";
 
-interface AddCardButtonProps {
+interface EditCardsButtonProps {
   onClick: () => void;
 }
 
-function AddCardsButton({ onClick }: AddCardButtonProps) {
+function CardTableButton({ onClick }: EditCardsButtonProps) {
   return (
-    <Tooltip placement="left" label="Add cards">
+    <Tooltip placement="left" label="Edit cards">
       <Button
         position="absolute"
         bottom={4}
@@ -21,9 +21,9 @@ function AddCardsButton({ onClick }: AddCardButtonProps) {
         aria-label="Add cards"
         onClick={onClick}
       >
-        <Plus size={32} />
+        <ListPlus size={32} />
       </Button>
     </Tooltip>
   );
 }
-export default AddCardsButton;
+export default CardTableButton;

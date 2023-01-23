@@ -14,9 +14,14 @@
         "description": "Adicione pelo menos 5 cards para começar a estudar"
       }
     },
-    "addCardsDialog": {
-      "title": "Adicionar cards",
+    "cardDialog": {
+      "title": {
+        "new": "Adicionar card",
+        "edit": "Editar card",
+        "view": "Ver card"
+      },
       "addButton": "Adicionar",
+      "editButton": "Atualizar",
       "form": {
         "label": {
           "title": "Rótulo",
@@ -29,6 +34,20 @@
           "errorMessage": "É necessário definir uma descrição."
         }
       }
+    },
+    "cardTableDialog": {
+      "title": "Cards",
+      "addButton": "Adicionar",
+      "table": {
+        "label": "Rótulo",
+        "actions": "Ações"
+      }
+    },
+    "deleteDialog": {
+      "title": "Deletar",
+      "header": "Tem certeza que quer deletar esse card?",
+      "yesButton": "Sim, pode deletar",
+      "noButton": "Não, deixa pra lá"
     }
   }
 }

@@ -7,8 +7,8 @@ import useI18N from "../portfolio/hooks/useI18N";
 import CardData from "./shared/CardData";
 import ViewStage from "./shared/ViewStage";
 
-import AddCardsButton from "./components/AddCardsButton";
-import AddCardsDialog from "./components/AddCardsDialog";
+import CardTableButton from "./components/CardTableButton";
+import CardTableDialog from "./components/CardTableDialog";
 import FlashCard from "./components/FlashCard";
 import { drawFirstDeck } from "./util/card";
 import {
@@ -26,7 +26,7 @@ interface AppMetadata {
 function FlashCardApp() {
   const i18n = useI18N("flash-cards");
 
-  const [addCardsDialogOpen, setAddCardsDialogOpen] = useState(false);
+  const [cardTableDialogOpen, setCardTableDialogOpen] = useState(false);
   const [loading, setLoading] = useState(true);
 
   const [metadata, setMetadata] = useState<AppMetadata>({
@@ -62,16 +62,16 @@ function FlashCardApp() {
       title="home"
       containerProps={{ overflowX: "hidden" }}
     >
-      <AddCardsButton onClick={() => setAddCardsDialogOpen(true)} />
-      <AddCardsDialog
-        open={addCardsDialogOpen}
+      <CardTableButton onClick={() => setCardTableDialogOpen(true)} />
+      <CardTableDialog
+        open={cardTableDialogOpen}
         onClose={() => {
           const deck = drawFirstDeck();
 
           if (!metadata.playable && deck.length > 0)
             setMetadata({ ...metadata, playable: true, cards: deck });
 
-          setAddCardsDialogOpen(false);
+          setCardTableDialogOpen(false);
         }}
       />
       <Heading
