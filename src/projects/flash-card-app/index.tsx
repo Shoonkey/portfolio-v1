@@ -37,7 +37,11 @@ function FlashCardApp() {
 
   useEffect(() => {
     const deck = drawFirstDeck();
-    setMetadata({ ...metadata, playable: deck.length >= 5, cards: deck });
+    setMetadata((data) => ({
+      ...data,
+      playable: deck.length >= 5,
+      cards: deck,
+    }));
     setLoading(false);
   }, []);
 
