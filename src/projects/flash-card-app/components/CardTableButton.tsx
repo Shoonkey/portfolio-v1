@@ -20,6 +20,7 @@ function CardTableButton({ onClick }: EditCardsButtonProps) {
         borderRadius="50%"
         aria-label="Add cards"
         onClick={onClick}
+        zIndex={2}
       >
         <ListPlus size={32} />
       </Button>
