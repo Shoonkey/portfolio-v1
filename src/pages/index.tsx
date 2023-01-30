@@ -1,15 +1,17 @@
-import { chakra, Box, Flex, Heading, Image, Text } from "@chakra-ui/react"
-import type { NextPage } from "next"
-import { useContext } from "react"
-import { I18NContext } from "../projects/portfolio/components/I18NProvider"
+import type { NextPage } from "next";
+import Link from "next/link";
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { ChatCircleText } from "phosphor-react";
+import { useContext } from "react";
 
-import Page from "../projects/portfolio/components/Page"
-import Project from "../projects/portfolio/components/Project"
-import Tech from "../projects/portfolio/components/Tech"
+import { I18NContext } from "../projects/portfolio/components/I18NProvider";
+import Page from "../projects/portfolio/components/Page";
+import Project from "../projects/portfolio/components/Project";
+import Tech from "../projects/portfolio/components/Tech";
 
 const Home: NextPage = () => {
-  const { getI18N } = useContext(I18NContext)
-  const i18n = getI18N("portfolio")
+  const { getI18N } = useContext(I18NContext);
+  const i18n = getI18N("portfolio");
 
   return (
     <Page
@@ -53,14 +55,19 @@ const Home: NextPage = () => {
               <Tech logoSrc="/node-logo.svg" name="Node" />
               <Tech logoSrc="/next-logo.svg" name="Next" />
             </Flex>
-            <Text textAlign="center" fontSize="1rem" mt={1}>
+            <Flex fontSize="1rem" justifyContent="center" alignItems="center" mt={2}>
               <Text as="span" color="gray.500" mr={2} display="inline-block">
                 {i18n.content.home.contactEmailDescription}
               </Text>
               <Text as="strong" letterSpacing=".8px">
                 shoonkey.dev@gmail.com
               </Text>
-            </Text>
+              <Text as="span" ml={2} color="pink.200" _hover={{ color: "pink.300" }}>
+                <Link href="mailto:shoonkey.dev@gmail.com">
+                  <ChatCircleText size={32} />
+                </Link>
+              </Text>
+            </Flex>
           </Box>
         </Box>
       </Flex>
@@ -105,7 +112,7 @@ const Home: NextPage = () => {
         </Flex>
       </Box>
     </Page>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
