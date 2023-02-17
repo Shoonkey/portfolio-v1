@@ -5,6 +5,11 @@ function Document() {
     <Html lang="en-US">
       <Head>
         <meta charSet="utf-8" />
+        <meta property="og:title" content="Portfolio (Richard)" />
+        <meta property="og:image" content="/preview-image.png" />
+        <meta property="og:description" content="Hi! I'm richard and this is my portfolio" />
+        <meta property="og:url" content="https://shoonkey.com" />
+        <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
