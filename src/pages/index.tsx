@@ -4,10 +4,10 @@ import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import { ChatCircleText } from "phosphor-react";
 import { useContext } from "react";
 
-import { I18NContext } from "../projects/portfolio/components/I18NProvider";
-import Page from "../projects/portfolio/components/Page";
-import Project from "../projects/portfolio/components/Project";
-import Tech from "../projects/portfolio/components/Tech";
+import { I18NContext } from "@/projects/portfolio/components/I18NProvider";
+import Page from "@/projects/portfolio/components/Page";
+import Project from "@/projects/portfolio/components/Project";
+import Tech from "@/projects/portfolio/components/Tech";
 
 const Home: NextPage = () => {
   const { getI18N } = useContext(I18NContext);

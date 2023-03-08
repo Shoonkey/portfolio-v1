@@ -1,4 +1,4 @@
-import FlashCardApp from "../../projects/flash-card-app";
+import FlashCardApp from "@/projects/flash-card-app";
 
 function FlashCardProject() {
   return <FlashCardApp />;

@@ -1,4 +1,4 @@
-import PomodoroTimer from "../../projects/pomodoro-timer";
+import PomodoroTimer from "@/projects/pomodoro-timer";
 
 function PomodoroTimerProject() {
   return <PomodoroTimer />;

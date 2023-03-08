@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 
-import PlaceNoteQuiz from "../../../projects/music-theory/quizzes/PlaceNoteQuiz"
-import Clef from "../../../projects/music-theory/shared/Clef";
+import PlaceNoteQuiz from "@/projects/music-theory/quizzes/PlaceNoteQuiz"
+import Clef from "@/projects/music-theory/shared/Clef";
 
 function MusicTheoryProject() {
   const router = useRouter()

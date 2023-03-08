@@ -1,8 +1,8 @@
 import { useMemo } from "react"
 
-import MusicTheoryQuizList from "../../projects/music-theory"
-import QuizInfo from "../../projects/music-theory/shared/QuizInfo"
-import useI18N from "../../projects/portfolio/hooks/useI18N"
+import MusicTheoryQuizList from "@/projects/music-theory"
+import QuizInfo from "@/projects/music-theory/shared/QuizInfo"
+import useI18N from "@/projects/portfolio/hooks/useI18N"
 
 function MusicTheoryProject() {
   const i18n = useI18N("music-theory-quiz")
