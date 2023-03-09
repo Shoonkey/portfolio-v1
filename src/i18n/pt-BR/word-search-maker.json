@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "pageTitles": {
+      "home": "Página inicial | Crie seu caça-palavras"
+    }
+  },
+  "content": {
+    "title": "Fábrica de caça-palavras",
+    "home": {
+      "editingModeExplanation": "Clique em qualquer letra para editar horizontalmente. Você pode trocar entre horizontal, vertical e diagonal clicando de novo.",
+      "highlightsExplanation": "Depois de ser editado, um campo vai ficar destacado para indicar que você adicionou uma palavra lá e não será mais editável a não ser que você clique nele e remova seu destaque.",
+      "clearEditHistory": "Limpar histórico de edições",
+      "wordBank": "Banco de palavras",
+      "addWord": "Adicionar",
+      "noWordsAdded": "Sem palavras por enquanto!<br /> Adicione-as aqui para acompanhar quais palavras estão no seu quebra-cabeça.",
+      "state": "Estado",
+      "editing": {
+        "horizontal": "Editando horizontalmente",
+        "vertical": "Editando verticalmente",
+        "diagonal": "Editando diagonalmente",
+        "none": "Não editando no momento"
+      }
+    }
+  }
+}
