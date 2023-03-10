@@ -104,6 +104,13 @@ const Home: NextPage = () => {
             imageSource="/flash-cards.png"
           />
           <Project
+            type="website"
+            name={i18n.content.home.projects.wordSearchMaker.title}
+            link="/word-search-maker"
+            githubLink="https://github.com/Shoonkey/portfolio/tree/main/src/projects/word-search-maker"
+            imageSource="/word-search-maker.png"
+          />
+          <Project
             type="bot"
             name={i18n.content.home.projects.ordis.title}
             githubLink="https://github.com/Shoonkey/ordis"

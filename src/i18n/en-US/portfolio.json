@@ -29,6 +29,9 @@
         },
         "flashCardApp": {
           "title": "Flash cards to study with"
+        },
+        "wordSearchMaker": {
+          "title": "Word search puzzle maker"
         }
       }
     }
