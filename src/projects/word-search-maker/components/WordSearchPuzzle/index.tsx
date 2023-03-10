@@ -1,15 +1,8 @@
-import {
-  Button,
-  Flex,
-  Grid,
-  Heading,
-  Spinner,
-  Text
-} from "@chakra-ui/react";
+import { Button, Flex, Grid, Heading, Spinner, Text } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
+import DOMToImage from "dom-to-image";
 
 import useI18N from "@/projects/portfolio/hooks/useI18N";
-import Word from "../../shared/Word";
 import PuzzleLetter from "./PuzzleLetter";
 import { getRandomGrid } from "./util";
 
@@ -20,8 +13,6 @@ interface EditingMetadata {
   initialCellIndex: number;
   currentCellIndex: number;
 }
-
-// TODO: figure out how to export puzzle
 
 function WordSearchPuzzle() {
   const i18n = useI18N("word-search-maker");
@@ -112,7 +103,26 @@ function WordSearchPuzzle() {
     setEditedCells(newList);
   };
 
+  const downloadPuzzle = async () => {
+    const puzzle = puzzleRef.current;
+
+    if (!puzzle)
+      return;
+
+    try {
+      const data = await DOMToImage.toPng(puzzle);
+      const link = document.createElement("a");
+      link.download = "puzzle.png";
+      link.href = data;
+      link.click();
+      console.log("test");
+    } catch (e) {
+      console.error("Failed to generate file. Error:", e);
+    }
+  };
+
   useEffect(() => setGridItems(getRandomGrid(10, 10)), []);
+  useEffect(() => console.log("Ref updated!", puzzleRef.current), [puzzleRef])
 
   return (
     <Flex
@@ -127,7 +137,12 @@ function WordSearchPuzzle() {
     >
       <Text>{i18n.content.home.editingModeExplanation}</Text>
       <Text>{i18n.content.home.highlightsExplanation}</Text>
-      <Flex gap={4} justifyContent="space-between" alignItems="center" flexDir={{ base: "column", md: "row" }}>
+      <Flex
+        gap={4}
+        justifyContent="space-between"
+        alignItems="center"
+        flexDir={{ base: "column", md: "row" }}
+      >
         <Heading as="h2" size="md">
           {i18n.content.home.state}:{" "}
           {editing
@@ -138,11 +153,9 @@ function WordSearchPuzzle() {
           {i18n.content.home.clearEditHistory}
         </Button>
       </Flex>
-      {/* <Button colorScheme="orange" onClick={() => downloadPuzzle()}>Download as PNG</Button> */}
-      <Flex flexDir="column" flexGrow={1}>
+      <Flex flexDir="column" flexGrow={1} ref={puzzleRef} bg="gray.800">
         {gridItems ? (
           <Grid
-            ref={puzzleRef}
             gridTemplateRows={`repeat(10, 1fr)`}
             gridTemplateColumns={`repeat(10, 32px)`}
             px={4}
@@ -152,7 +165,6 @@ function WordSearchPuzzle() {
             placeItems="center"
             mx="auto"
             gap={2}
-            mt={4}
           >
             {gridItems.map((item, index) => {
               const isHighlighted = editedCells.includes(index);
@@ -184,6 +196,9 @@ function WordSearchPuzzle() {
           <Spinner />
         )}
       </Flex>
+      <Button alignSelf="center" colorScheme="orange" onClick={() => downloadPuzzle()}>
+        Download as PNG
+      </Button>
     </Flex>
   );
 }
