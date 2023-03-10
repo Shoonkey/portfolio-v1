@@ -119,13 +119,15 @@ function WordSearchPuzzle() {
       flexDir="column"
       mx="auto"
       gap={4}
-      borderLeft="solid 1px white"
-      pl={6}
+      borderLeft={{ base: "none", md: "solid 1px white" }}
+      borderTop={{ base: "solid 1px white", md: "none" }}
+      pl={{ base: 0, md: 6 }}
+      pt={{ base: 6, md: 0 }}
       mb={4}
     >
       <Text>{i18n.content.home.editingModeExplanation}</Text>
       <Text>{i18n.content.home.highlightsExplanation}</Text>
-      <Flex gap={4} justifyContent="space-between" alignItems="center">
+      <Flex gap={4} justifyContent="space-between" alignItems="center" flexDir={{ base: "column", md: "row" }}>
         <Heading as="h2" size="md">
           {i18n.content.home.state}:{" "}
           {editing
@@ -141,8 +143,9 @@ function WordSearchPuzzle() {
         {gridItems ? (
           <Grid
             ref={puzzleRef}
-            gridTemplateRows={`repeat(10, 48px)`}
-            gridTemplateColumns={`repeat(10, 48px)`}
+            gridTemplateRows={`repeat(10, 1fr)`}
+            gridTemplateColumns={`repeat(10, 32px)`}
+            px={4}
             fontFamily="monospace"
             fontSize={24}
             textAlign="center"

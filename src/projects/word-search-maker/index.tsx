@@ -41,7 +41,7 @@ function WordSearchMaker() {
 
   return (
     <Page projectName="word-search-maker" title="home">
-      <Flex flexGrow={1} alignItems="center" gap={6}>
+      <Flex flexGrow={1} alignItems="center" gap={6} flexDir={{ base: "column", md: "row" }} mx="auto">
         <Flex gap={4} maxW="400px" flexDir="column">
           <AddWordForm error={formError} onSubmit={(word) => addNewWord(word)} />
           <WordList list={wordList} onRemoveItem={(index) => removeWord(index)} />
