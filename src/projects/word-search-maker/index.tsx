@@ -30,7 +30,7 @@ function WordSearchMaker() {
       return;
     }
 
-    setWordList([...wordList, { id: uuidv4(), content: word, added: false }]);
+    setWordList([...wordList, { id: uuidv4(), content: word }]);
   };
 
   const removeWord = (index: number) => {
