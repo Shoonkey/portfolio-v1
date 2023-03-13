@@ -4,6 +4,7 @@ A quiz app about music theory I built to help studying concepts
 
 ## Features
 
+- [x] Available in English and Portuguese
 - [x] Quiz: Place the correct note in the treble clef
 - [x] Quiz: Place the correct note in the bass clef
 - [x] Quiz: Identify missing piece of circle of fifths

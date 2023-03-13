@@ -1,4 +1,6 @@
-Welcome to the Github repo for my portfolio!.
+# Portfolio
+
+Welcome to the Github repo for my portfolio!
 
 It contains some projects I've made in the past and may contain some I'm still working on.
 

@@ -4,6 +4,7 @@ An app for creating flash cards to help you study and remember things better! I 
 
 ## Features
 
+- [x] Available in English and Portuguese
 - [x] Managing deck (creating, editing and deleting cards)
 - [x] Animating between current and next card
 - [x] Animating card flip to show the card back
