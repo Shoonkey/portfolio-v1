@@ -213,10 +213,10 @@ function WordSearchPuzzle() {
       </Flex>
       <HideInPrintMode flexDir="row" justifyContent="center" gap={2}>
         <Button colorScheme="orange" onClick={() => downloadPuzzle()}>
-          Download as PNG
+          {i18n.content.home.downloadPuzzlePNG}
         </Button>
         <Button colorScheme="orange" onClick={() => window.print()}>
-          Save to PDF / Print
+        {i18n.content.home.printOrSavePDF}
         </Button>
       </HideInPrintMode>
     </Flex>
