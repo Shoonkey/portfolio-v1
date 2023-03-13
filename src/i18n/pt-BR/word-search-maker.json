@@ -14,6 +14,14 @@
       "addWord": "Adicionar",
       "noWordsAdded": "Sem palavras por enquanto!<br /> Adicione-as aqui para acompanhar quais palavras estão no seu quebra-cabeça.",
       "state": "Estado",
+      "downloadPuzzlePNG": "Download as PNG",
+      "printOrSavePDF": "Save to PDF / Print",
+      "newWordErrors": {
+        "max-words": "Número máximo de palavras atingido",
+        "contains-space": "A palavra não pode conter espaços",
+        "too-small": "Insira uma palavra com pelo menos 3 letras",
+        "already-in-list": "A palavra já está na lista"
+      },
       "editing": {
         "horizontal": "Editando horizontalmente",
         "vertical": "Editando verticalmente",

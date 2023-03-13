@@ -1,37 +1,47 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 
 import Page from "../portfolio/components/Page";
+import useI18N from "../portfolio/hooks/useI18N";
+
 import AddWordForm from "./components/AddWordForm";
 import WordList from "./components/WordList";
 import WordSearchPuzzle from "./components/WordSearchPuzzle";
 import Word from "./shared/Word";
 
+type NewWordErrorType =
+  | "max-words"
+  | "contains-space"
+  | "too-small"
+  | "already-in-list";
+ 
 function WordSearchMaker() {
+  const i18n = useI18N("word-search-maker");
+
   const [wordList, setWordList] = useState<Word[]>([]);
-  const [formError, setFormError] = useState("");
+  const [formErrorType, setFormErrorType] = useState<NewWordErrorType | null>(null);
 
   const addNewWord = (word: string) => {
-    setFormError("");
+    setFormErrorType(null);
 
     if (wordList.length >= 15) {
-      setFormError("Maximum amount of words reached");
+      setFormErrorType("max-words");
       return;
     }
 
     if (word.includes(" ")) {
-      setFormError("Word cannot contain spaces");
+      setFormErrorType("contains-space");
       return;
     }
 
     if (word.length < 3) {
-      setFormError("Enter a word with at least 3 letters");
+      setFormErrorType("too-small");
       return;
     }
 
     if (wordList.find((w) => w.content === word)) {
-      setFormError("Word already in list");
+      setFormErrorType("already-in-list");
       return;
     }
 
@@ -46,10 +56,22 @@ function WordSearchMaker() {
 
   return (
     <Page projectName="word-search-maker" title="home">
-      <Flex flexGrow={1} alignItems="center" gap={6} flexDir={{ base: "column", md: "row" }} mx="auto">
+      <Flex
+        flexGrow={1}
+        alignItems="center"
+        gap={6}
+        flexDir={{ base: "column", md: "row" }}
+        mx="auto"
+      >
         <Flex gap={4} maxW="400px" flexDir="column">
-          <AddWordForm error={formError} onSubmit={(word) => addNewWord(word)} />
-          <WordList list={wordList} onRemoveItem={(index) => removeWord(index)} />
+          <AddWordForm
+            error={formErrorType ? i18n.content.home.newWordErrors[formErrorType] : null}
+            onSubmit={(word) => addNewWord(word)}
+          />
+          <WordList
+            list={wordList}
+            onRemoveItem={(index) => removeWord(index)}
+          />
         </Flex>
         <WordSearchPuzzle />
       </Flex>

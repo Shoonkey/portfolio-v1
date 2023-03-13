@@ -14,6 +14,14 @@
       "addWord": "Add",
       "noWordsAdded": "No words added yet!<br />Add them here so you can keep track of what words are in your puzzle.",
       "state": "State",
+      "downloadPuzzlePNG": "Baixar como PNG",
+      "printOrSavePDF": "Salvar como PDF / Imprimir",
+      "newWordErrors": {
+        "max-words": "Maximum amount of words reached",
+        "contains-space": "Word cannot contain spaces",
+        "too-small": "Enter a word with at least 3 letters",
+        "already-in-list": "Word already in list"
+      },
       "editing": {
         "horizontal": "Editing horizontally",
         "vertical": "Editing vertically",
