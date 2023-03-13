@@ -14,8 +14,8 @@
       "addWord": "Add",
       "noWordsAdded": "No words added yet!<br />Add them here so you can keep track of what words are in your puzzle.",
       "state": "State",
-      "downloadPuzzlePNG": "Baixar como PNG",
-      "printOrSavePDF": "Salvar como PDF / Imprimir",
+      "downloadPuzzlePNG": "Download as PNG",
+      "printOrSavePDF": "Save to PDF / Print",
       "newWordErrors": {
         "max-words": "Maximum amount of words reached",
         "contains-space": "Word cannot contain spaces",

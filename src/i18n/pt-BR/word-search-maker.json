@@ -14,8 +14,8 @@
       "addWord": "Adicionar",
       "noWordsAdded": "Sem palavras por enquanto!<br /> Adicione-as aqui para acompanhar quais palavras estão no seu quebra-cabeça.",
       "state": "Estado",
-      "downloadPuzzlePNG": "Download as PNG",
-      "printOrSavePDF": "Save to PDF / Print",
+      "downloadPuzzlePNG": "Baixar como PNG",
+      "printOrSavePDF": "Salvar como PDF / Imprimir",
       "newWordErrors": {
         "max-words": "Número máximo de palavras atingido",
         "contains-space": "A palavra não pode conter espaços",
