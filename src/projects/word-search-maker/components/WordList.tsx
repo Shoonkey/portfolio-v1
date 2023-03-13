@@ -1,3 +1,4 @@
+import HideInPrintMode from "@/projects/portfolio/components/HideInPrintMode";
 import useI18N from "@/projects/portfolio/hooks/useI18N";
 import {
   Button,
@@ -8,6 +9,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { Trash } from "phosphor-react";
+import styled from "styled-components";
 
 import Word from "../shared/Word";
 
@@ -15,6 +17,21 @@ interface WordListProps {
   list: Word[];
   onRemoveItem: (index: number) => void;
 }
+
+const Container = styled(UnorderedList)`
+  list-style-type: none;
+  
+  
+  @media print {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+
+    li {
+      padding: 0 !important;
+    }
+  }
+`;
 
 function WordList({ list, onRemoveItem }: WordListProps) {
   const i18n = useI18N("word-search-maker");
@@ -29,9 +46,10 @@ function WordList({ list, onRemoveItem }: WordListProps) {
     );
 
   return (
-    <UnorderedList
-      listStyleType="none"
+    <Container
       minW="400px"
+      maxH="400px"
+      overflowY="auto"
       display="flex"
       flexDir="column"
       marginInlineStart={0}
@@ -51,24 +69,25 @@ function WordList({ list, onRemoveItem }: WordListProps) {
             as="h2"
             size="md"
             flexGrow={1}
-            color="yellow.400"
             letterSpacing="1px"
           >
             {word.content}
           </Heading>
-          <Tooltip placement="top" label="Remove word">
-            <Button
-              variant="transparent"
-              aria-label="Remove word"
-              color="red.400"
-              onClick={() => onRemoveItem(index)}
-            >
-              <Trash size={32} />
-            </Button>
-          </Tooltip>
+          <HideInPrintMode>
+            <Tooltip placement="top" label="Remove word">
+              <Button
+                variant="transparent"
+                aria-label="Remove word"
+                color="red.400"
+                onClick={() => onRemoveItem(index)}
+              >
+                <Trash size={32} />
+              </Button>
+            </Tooltip>
+          </HideInPrintMode>
         </ListItem>
       ))}
-    </UnorderedList>
+    </Container>
   );
 }
 

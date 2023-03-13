@@ -15,6 +15,11 @@ function WordSearchMaker() {
   const addNewWord = (word: string) => {
     setFormError("");
 
+    if (wordList.length >= 15) {
+      setFormError("Maximum amount of words reached");
+      return;
+    }
+
     if (word.includes(" ")) {
       setFormError("Word cannot contain spaces");
       return;

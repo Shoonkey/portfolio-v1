@@ -18,6 +18,7 @@
     "phosphor-react": "^1.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "styled-components": "^5.3.8",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
@@ -25,6 +26,7 @@
     "@types/node": "^18.11.16",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
+    "@types/styled-components": "^5.1.26",
     "@types/uuid": "^9.0.0",
     "eslint": "^8.30.0",
     "eslint-config-next": "^13.0.7",

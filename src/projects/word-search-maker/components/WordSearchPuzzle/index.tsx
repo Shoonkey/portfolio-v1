@@ -1,10 +1,19 @@
-import { Button, Flex, Grid, Heading, Spinner, Text } from "@chakra-ui/react";
+import {
+  Button,
+  Checkbox,
+  Flex,
+  Grid,
+  Heading,
+  Spinner,
+  Text,
+} from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import DOMToImage from "dom-to-image";
 
 import useI18N from "@/projects/portfolio/hooks/useI18N";
 import PuzzleLetter from "./PuzzleLetter";
 import { getRandomGrid } from "./util";
+import HideInPrintMode from "@/projects/portfolio/components/HideInPrintMode";
 
 type EditingMode = "horizontal" | "vertical" | "diagonal";
 
@@ -22,6 +31,7 @@ function WordSearchPuzzle() {
   const [gridItems, setGridItems] = useState<string[] | null>(null);
   const [editing, setEditing] = useState<EditingMetadata | null>(null);
   const [editedCells, setEditedCells] = useState<number[]>([]);
+  const [hideEditHistory, setHideEditHistory] = useState(false);
 
   const updateEditingMode = (
     editing: EditingMetadata | null,
@@ -106,8 +116,7 @@ function WordSearchPuzzle() {
   const downloadPuzzle = async () => {
     const puzzle = puzzleRef.current;
 
-    if (!puzzle)
-      return;
+    if (!puzzle) return;
 
     try {
       const data = await DOMToImage.toPng(puzzle);
@@ -122,37 +131,42 @@ function WordSearchPuzzle() {
   };
 
   useEffect(() => setGridItems(getRandomGrid(10, 10)), []);
-  useEffect(() => console.log("Ref updated!", puzzleRef.current), [puzzleRef])
 
   return (
     <Flex
       flexDir="column"
       mx="auto"
-      gap={4}
+      gap={6}
       borderLeft={{ base: "none", md: "solid 1px white" }}
       borderTop={{ base: "solid 1px white", md: "none" }}
       pl={{ base: 0, md: 6 }}
       pt={{ base: 6, md: 0 }}
       mb={4}
     >
-      <Text>{i18n.content.home.editingModeExplanation}</Text>
-      <Text>{i18n.content.home.highlightsExplanation}</Text>
-      <Flex
-        gap={4}
-        justifyContent="space-between"
-        alignItems="center"
-        flexDir={{ base: "column", md: "row" }}
-      >
-        <Heading as="h2" size="md">
-          {i18n.content.home.state}:{" "}
-          {editing
-            ? i18n.content.home.editing[editing.currentMode]
-            : i18n.content.home.editing.none}
-        </Heading>
-        <Button colorScheme="cyan" onClick={() => setEditedCells([])}>
-          {i18n.content.home.clearEditHistory}
-        </Button>
-      </Flex>
+      <HideInPrintMode gap={4}>
+        <Text>{i18n.content.home.editingModeExplanation}</Text>
+        <Text>{i18n.content.home.highlightsExplanation}</Text>
+        <Flex
+          gap={4}
+          justifyContent="space-between"
+          alignItems="center"
+          flexDir={{ base: "column", md: "row" }}
+        >
+          <Heading as="h2" size="md">
+            {i18n.content.home.state}:{" "}
+            {editing
+              ? i18n.content.home.editing[editing.currentMode]
+              : i18n.content.home.editing.none}
+          </Heading>
+          <Checkbox
+            colorScheme="cyan"
+            isChecked={hideEditHistory}
+            onChange={(e) => setHideEditHistory(e.target.checked)}
+          >
+            {i18n.content.home.hideEditHistory}
+          </Checkbox>
+        </Flex>
+      </HideInPrintMode>
       <Flex flexDir="column" flexGrow={1} ref={puzzleRef} bg="gray.800">
         {gridItems ? (
           <Grid
@@ -167,7 +181,8 @@ function WordSearchPuzzle() {
             gap={2}
           >
             {gridItems.map((item, index) => {
-              const isHighlighted = editedCells.includes(index);
+              const isHighlighted =
+                !hideEditHistory && editedCells.includes(index);
 
               return (
                 <PuzzleLetter
@@ -196,9 +211,14 @@ function WordSearchPuzzle() {
           <Spinner />
         )}
       </Flex>
-      <Button alignSelf="center" colorScheme="orange" onClick={() => downloadPuzzle()}>
-        Download as PNG
-      </Button>
+      <HideInPrintMode flexDir="row" justifyContent="center" gap={2}>
+        <Button colorScheme="orange" onClick={() => downloadPuzzle()}>
+          Download as PNG
+        </Button>
+        <Button colorScheme="orange" onClick={() => window.print()}>
+          Save to PDF / Print
+        </Button>
+      </HideInPrintMode>
     </Flex>
   );
 }

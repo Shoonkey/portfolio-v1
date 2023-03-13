@@ -9,7 +9,7 @@
     "home": {
       "editingModeExplanation": "Click in any letter to edit horizontally. You can toggle between horizontal, vertical and diagonal mode by clicking again.",
       "highlightsExplanation": "After being edited, a field will become highlighted to indicate you've added a word there and will become uneditable unless you click on it to remove its highlight",
-      "clearEditHistory": "Clear edit history",
+      "hideEditHistory": "Hide edit history",
       "wordBank": "Word bank",
       "addWord": "Add",
       "noWordsAdded": "No words added yet!<br />Add them here so you can keep track of what words are in your puzzle.",
