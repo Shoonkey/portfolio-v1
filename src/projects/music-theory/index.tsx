@@ -1,18 +1,18 @@
-import { Center, Flex, Heading } from "@chakra-ui/react"
-import Link from "next/link"
-import { MusicNoteSimple } from "phosphor-react"
+import { Center, Flex, Heading } from "@chakra-ui/react";
+import Link from "next/link";
+import { MusicNoteSimple } from "@phosphor-icons/react";
 
-import Page from "../portfolio/components/Page"
-import useI18N from "../portfolio/hooks/useI18N"
+import Page from "../portfolio/components/Page";
+import useI18N from "../portfolio/hooks/useI18N";
 
-import QuizInfo from "./shared/QuizInfo"
+import QuizInfo from "./shared/QuizInfo";
 
 interface MusicTheoryQuizListProps {
-  quizzes: QuizInfo[]
+  quizzes: QuizInfo[];
 }
 
 function MusicTheoryQuizList({ quizzes }: MusicTheoryQuizListProps) {
-  const i18n = useI18N("music-theory-quiz")
+  const i18n = useI18N("music-theory-quiz");
 
   return (
     <Page projectName="music-theory-quiz" title="home">
@@ -23,7 +23,12 @@ function MusicTheoryQuizList({ quizzes }: MusicTheoryQuizListProps) {
             {i18n.content.home.chooseQuiz}
           </Heading>
         </Flex>
-        <Flex flexWrap="wrap" justifyContent="center" alignItems="center" gap={4}>
+        <Flex
+          flexWrap="wrap"
+          justifyContent="center"
+          alignItems="center"
+          gap={4}
+        >
           {quizzes.map((quiz, index) => (
             <Link href={quiz.href} key={`quiz-${index}`}>
               <Heading
@@ -49,7 +54,7 @@ function MusicTheoryQuizList({ quizzes }: MusicTheoryQuizListProps) {
         </Flex>
       </Center>
     </Page>
-  )
+  );
 }
 
-export default MusicTheoryQuizList
+export default MusicTheoryQuizList;

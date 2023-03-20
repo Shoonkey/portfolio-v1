@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
-import { ChatCircleText } from "phosphor-react";
+import { ChatCircleText } from "@phosphor-icons/react";
 import { useContext } from "react";
 
 import { I18NContext } from "@/projects/portfolio/components/I18NProvider";
@@ -55,14 +55,24 @@ const Home: NextPage = () => {
               <Tech logoSrc="/node-logo.svg" name="Node" />
               <Tech logoSrc="/next-logo.svg" name="Next" />
             </Flex>
-            <Flex fontSize="1rem" justifyContent="center" alignItems="center" mt={2}>
+            <Flex
+              fontSize="1rem"
+              justifyContent="center"
+              alignItems="center"
+              mt={2}
+            >
               <Text as="span" color="gray.500" mr={2} display="inline-block">
                 {i18n.content.home.contactEmailDescription}
               </Text>
               <Text as="strong" letterSpacing=".8px">
                 shoonkey.dev@gmail.com
               </Text>
-              <Text as="span" ml={2} color="pink.200" _hover={{ color: "pink.300" }}>
+              <Text
+                as="span"
+                ml={2}
+                color="pink.200"
+                _hover={{ color: "pink.300" }}
+              >
                 <Link href="mailto:shoonkey.dev@gmail.com">
                   <ChatCircleText size={32} />
                 </Link>

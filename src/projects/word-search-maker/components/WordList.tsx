@@ -8,7 +8,7 @@ import {
   UnorderedList,
   Text,
 } from "@chakra-ui/react";
-import { Trash } from "phosphor-react";
+import { Trash } from "@phosphor-icons/react";
 import styled from "styled-components";
 
 import Word from "../shared/Word";
@@ -20,8 +20,7 @@ interface WordListProps {
 
 const Container = styled(UnorderedList)`
   list-style-type: none;
-  
-  
+
   @media print {
     display: grid;
     grid-template-rows: repeat(5, 1fr);
@@ -65,12 +64,7 @@ function WordList({ list, onRemoveItem }: WordListProps) {
           py={2}
           borderRadius="16px"
         >
-          <Heading
-            as="h2"
-            size="md"
-            flexGrow={1}
-            letterSpacing="1px"
-          >
+          <Heading as="h2" size="md" flexGrow={1} letterSpacing="1px">
             {word.content}
           </Heading>
           <HideInPrintMode>

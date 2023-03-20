@@ -15,7 +15,7 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import { PencilSimple, Plus } from "phosphor-react";
+import { PencilSimple, Plus } from "@phosphor-icons/react";
 import { FormEvent, useEffect, useState } from "react";
 
 import useI18N from "../../portfolio/hooks/useI18N";

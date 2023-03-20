@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Heading, Image, Flex, Text, Tooltip } from "@chakra-ui/react";
-import { Robot } from "phosphor-react";
+import { Robot } from "@phosphor-icons/react";
 
 import useI18N from "../hooks/useI18N";
 

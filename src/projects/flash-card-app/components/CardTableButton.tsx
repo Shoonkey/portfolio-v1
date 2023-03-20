@@ -1,5 +1,5 @@
 import { Button, Tooltip } from "@chakra-ui/react";
-import { ListPlus } from "phosphor-react";
+import { ListPlus } from "@phosphor-icons/react";
 
 interface EditCardsButtonProps {
   onClick: () => void;

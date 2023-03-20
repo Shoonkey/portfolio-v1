@@ -17,7 +17,7 @@ import {
   Tooltip,
   Tr,
 } from "@chakra-ui/react";
-import { Info, PencilSimple, TrashSimple } from "phosphor-react";
+import { Info, PencilSimple, TrashSimple } from "@phosphor-icons/react";
 import { useState } from "react";
 
 import useI18N from "../../portfolio/hooks/useI18N";

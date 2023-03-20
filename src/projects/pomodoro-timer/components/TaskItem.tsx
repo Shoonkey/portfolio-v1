@@ -1,18 +1,18 @@
-import { Flex, Tooltip, IconButton, Text } from "@chakra-ui/react"
-import { CheckCircle, TrashSimple } from "phosphor-react"
+import { Flex, Tooltip, IconButton, Text } from "@chakra-ui/react";
+import { CheckCircle, TrashSimple } from "@phosphor-icons/react";
 
-import useI18N from "../../portfolio/hooks/useI18N"
+import useI18N from "../../portfolio/hooks/useI18N";
 
-import Task from "../interfaces/Task"
+import Task from "../interfaces/Task";
 
 interface TaskProps {
-  task: Task
-  onSetComplete: (complete: boolean) => void
-  onClickDelete: () => void
+  task: Task;
+  onSetComplete: (complete: boolean) => void;
+  onClickDelete: () => void;
 }
 
 function TaskItem({ task, onSetComplete, onClickDelete }: TaskProps) {
-  const i18n = useI18N("pomodoro-timer")
+  const i18n = useI18N("pomodoro-timer");
 
   return (
     <Flex alignItems="center" bg="gray.900" pl={4} py={1}>
@@ -56,7 +56,7 @@ function TaskItem({ task, onSetComplete, onClickDelete }: TaskProps) {
         />
       </Tooltip>
     </Flex>
-  )
+  );
 }
 
-export default TaskItem
+export default TaskItem;

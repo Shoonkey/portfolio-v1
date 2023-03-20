@@ -5,59 +5,59 @@ import {
   SlideFade,
   Spinner,
   Tooltip,
-} from "@chakra-ui/react"
-import { useEffect, useState } from "react"
-import { Plus } from "phosphor-react"
-import { v4 as uuidv4 } from "uuid"
+} from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { Plus } from "@phosphor-icons/react";
+import { v4 as uuidv4 } from "uuid";
 
-import useI18N from "../../portfolio/hooks/useI18N"
+import useI18N from "../../portfolio/hooks/useI18N";
 
-import Task from "../interfaces/Task"
-import AddTaskDialog from "./AddTaskModal"
-import TaskItem from "./TaskItem"
+import Task from "../interfaces/Task";
+import AddTaskDialog from "./AddTaskModal";
+import TaskItem from "./TaskItem";
 
 function TodoList() {
-  const i18n = useI18N("pomodoro-timer")
+  const i18n = useI18N("pomodoro-timer");
 
-  const [tasks, setTasks] = useState<Task[]>([])
-  const [loadingTasks, setLoadingTasks] = useState(true)
-  const [taskModalOpen, setTaskModalOpen] = useState(false)
+  const [tasks, setTasks] = useState<Task[]>([]);
+  const [loadingTasks, setLoadingTasks] = useState(true);
+  const [taskModalOpen, setTaskModalOpen] = useState(false);
 
   const addTask = (description: string) => {
     setTasks((data) => [
       ...data,
       { id: uuidv4(), description, completed: false },
-    ])
-  }
+    ]);
+  };
 
   const removeTask = (taskIndex: number) => {
     setTasks((data) => [
       ...data.slice(0, taskIndex),
       ...data.slice(taskIndex + 1),
-    ])
-  }
+    ]);
+  };
 
   const setTaskCompleted = (taskIndex: number, completed: boolean) => {
     setTasks((data) => [
       ...data.slice(0, taskIndex),
       { ...data[taskIndex], completed },
       ...data.slice(taskIndex + 1),
-    ])
-  }
+    ]);
+  };
 
   useEffect(() => {
-    const savedTasks = localStorage.getItem("tasks")
+    const savedTasks = localStorage.getItem("tasks");
 
-    if (savedTasks) setTasks(JSON.parse(savedTasks))
+    if (savedTasks) setTasks(JSON.parse(savedTasks));
 
-    setLoadingTasks(false)
-  }, [])
+    setLoadingTasks(false);
+  }, []);
 
   useEffect(() => {
-    if (loadingTasks) return
+    if (loadingTasks) return;
 
-    localStorage.setItem("tasks", JSON.stringify(tasks))
-  }, [loadingTasks, tasks])
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [loadingTasks, tasks]);
 
   return (
     <>
@@ -100,7 +100,7 @@ function TodoList() {
         )}
       </Flex>
     </>
-  )
+  );
 }
 
-export default TodoList
+export default TodoList;

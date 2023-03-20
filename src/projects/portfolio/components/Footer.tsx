@@ -1,11 +1,11 @@
-import { Flex, Text } from "@chakra-ui/react"
-import { Heart } from "phosphor-react"
+import { Flex, Text } from "@chakra-ui/react";
+import { Heart } from "@phosphor-icons/react";
 
-import useI18N from "../hooks/useI18N"
-import HideInPrintMode from "./HideInPrintMode"
+import useI18N from "../hooks/useI18N";
+import HideInPrintMode from "./HideInPrintMode";
 
 function Footer() {
-  const i18n = useI18N("portfolio")
+  const i18n = useI18N("portfolio");
 
   return (
     <HideInPrintMode>
@@ -14,7 +14,7 @@ function Footer() {
         <Heart size={32} weight="fill" color="#eb5df5" />
       </Flex>
     </HideInPrintMode>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
