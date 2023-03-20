@@ -16,7 +16,14 @@
       "portfolioDescription": "Além dessas tecnologias, eu também já trabalhei com <strong>Vue</strong> e <strong>Express</strong>.",
       "projectHeader": "Aqui estão alguns dos meus projetos públicos:",
       "madeWith": "Feito com",
-      "projectInProgress": "Em andamento",
+      "projectStatus": {
+        "in-progress": "Em andamento",
+        "complete": "Completo",
+        "paused": "Pausado"
+      },
+      "projectTooltips": {
+        "viewCode": "Ver código"
+      },
       "projects": {
         "pomodoroTimer": {
           "title": "Timer Pomodoro"

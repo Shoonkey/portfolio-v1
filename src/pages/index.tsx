@@ -124,7 +124,7 @@ const Home: NextPage = () => {
             type="bot"
             name={i18n.content.home.projects.ordis.title}
             githubLink="https://github.com/Shoonkey/ordis"
-            inProgress
+            status="paused"
           />
         </Flex>
       </Box>
