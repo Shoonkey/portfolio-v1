@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "pageTitles": {
+      "page-not-found": "Oops! Página não encontrada"
+    }
+  },
+  "content": {
+    "title": "Página não encontrada",
+    "page-not-found": {
+      "mainText": "A página que você tentou acessar não foi encontrada.",
+      "subtext": "Confirme se você está acessando a URL certa. Se estiver, é possível que o projeto tenha sido removido." 
+    }
+  }
+}
