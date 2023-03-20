@@ -16,14 +16,14 @@
       "portfolioDescription": "Besides those technologies, I have also worked with <strong>Vue</strong> and <strong>Express</strong> in the past.",
       "projectHeader": "Here are some of my public projects:",
       "madeWith": "Made with",
+      "tooltips": {
+        "viewCode": "View code",
+        "viewWebsite": "View website"
+      },
       "projectStatus": {
         "in-progress": "In progress",
         "complete": "Complete",
         "paused": "Paused"
-      },
-      "projectLabels": {
-        "viewCode": "View code",
-        "viewWebsite": "View website"
       },
       "projects": {
         "pomodoroTimer": {

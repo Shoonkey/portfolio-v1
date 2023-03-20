@@ -101,11 +101,11 @@ function Project({
           </Text>
           <Link
             href={githubLink}
-            aria-label={i18n.content.home.projectLabels.viewCode}
+            aria-label={i18n.content.home.tooltips.viewCode}
           >
             <Tooltip
               placement="top"
-              label={i18n.content.home.projectLabels.viewCode}
+              label={i18n.content.home.tooltips.viewCode}
             >
               <Image
                 src="/github-logo.png"
