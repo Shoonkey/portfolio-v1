@@ -40,6 +40,9 @@
         },
         "wordSearchMaker": {
           "title": "Word search puzzle maker"
+        },
+        "noteDetector": {
+          "title": "Note detector"
         }
       }
     }

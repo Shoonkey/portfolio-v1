@@ -39,6 +39,9 @@
         },
         "wordSearchMaker": {
           "title": "Fábrica de caça-palavras"
+        },
+        "noteDetector": {
+          "title": "Detector de notas"
         }
       }
     }
