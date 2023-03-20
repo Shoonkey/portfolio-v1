@@ -34,7 +34,7 @@ const Home: NextPage = () => {
           w={{ base: "80%", md: "400px" }}
           borderRadius="40%"
         />
-        <Box>
+        <Box maxW="600px">
           <Heading as="h2" size="2xl">
             {i18n.content.home.hello}
           </Heading>
